@@ -1833,3 +1833,529 @@ responsive
 
 }
 
+/* =========================
+   THE ROCKS / ARMY THEME
+========================= */
+
+:root {
+  --army-black: #101010;
+  --army-charcoal: #1a1a1a;
+  --army-olive: #4b5320;
+  --army-olive-dark: #394016;
+  --army-gold: #c8a24a;
+  --army-gold-dark: #a8842f;
+  --army-white: #f7f5ef;
+  --army-gray: #d8d4c8;
+}
+
+/* Global accents */
+::selection {
+  background: var(--army-gold);
+  color: #fff;
+}
+
+a {
+  color: var(--army-gold);
+}
+
+a:hover {
+  color: var(--army-gold-dark);
+}
+
+/* Header / nav */
+.sub-header {
+  background-color: var(--army-black) !important;
+}
+
+.sub-header .left-content p,
+.sub-header .right-icons ul li a {
+  color: var(--army-white) !important;
+}
+
+.sub-header .left-content p em {
+  color: var(--army-gold) !important;
+}
+
+.sub-header .right-icons ul li a:hover {
+  color: var(--army-gold) !important;
+}
+
+.header-area {
+  background-color: rgba(16, 16, 16, 0.90) !important;
+}
+
+.header-area .main-nav .logo {
+  color: var(--army-white) !important;
+  letter-spacing: 2px;
+}
+
+.header-area .main-nav .nav li a {
+  color: var(--army-white) !important;
+}
+
+.header-area .main-nav .nav li:hover a,
+.header-area .main-nav .nav li a.active {
+  color: var(--army-gold) !important;
+}
+
+.header-area .main-nav .nav li.has-sub:after {
+  color: var(--army-white) !important;
+}
+
+/* Sticky header */
+.background-header {
+  background-color: var(--army-white) !important;
+}
+
+.background-header .main-nav .logo,
+.background-header .main-nav .nav li a {
+  color: var(--army-black) !important;
+}
+
+.background-header .main-nav .nav li:hover a,
+.background-header .main-nav .nav li a.active {
+  color: var(--army-olive) !important;
+}
+
+.background-header .main-nav .nav li.has-sub:after {
+  color: var(--army-black) !important;
+}
+
+/* Dropdown */
+.header-area .main-nav .nav li.has-sub ul.sub-menu {
+  border: 1px solid rgba(200, 162, 74, 0.18);
+}
+
+.header-area .main-nav .nav li.has-sub ul.sub-menu li a {
+  background: var(--army-black) !important;
+  color: var(--army-white) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-area .main-nav .nav li.has-sub ul li a:hover {
+  background: var(--army-charcoal) !important;
+  color: var(--army-gold) !important;
+  padding-left: 25px;
+}
+
+/* Button override */
+.main-button-red a {
+  background-color: var(--army-gold) !important;
+  color: var(--army-black) !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.main-button-red a:hover {
+  background-color: var(--army-gold-dark) !important;
+  color: #fff !important;
+}
+
+/* Page hero */
+.programs-hero {
+  background:
+    linear-gradient(rgba(16,16,16,0.68), rgba(16,16,16,0.72)),
+    url("../images/heading-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.programs-hero h6 {
+  color: var(--army-gold) !important;
+  letter-spacing: 2px;
+}
+
+.programs-hero h2 {
+  color: var(--army-white) !important;
+}
+
+/* Programs section */
+.programs-page-section {
+  background:
+    linear-gradient(rgba(12,12,12,0.88), rgba(18,18,18,0.90)),
+    url("../images/meetings-page-bg.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.programs-page-section .section-heading h2 {
+  color: var(--army-white) !important;
+  border-bottom: 1px solid rgba(200, 162, 74, 0.28) !important;
+  text-align: center;
+}
+
+.program-intro-box {
+  background: rgba(247, 245, 239, 0.96);
+  padding: 32px;
+  border-radius: 18px;
+  margin-bottom: 50px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  border-left: 5px solid var(--army-gold);
+}
+
+.program-intro-box p {
+  color: var(--army-black);
+  font-size: 15px;
+  line-height: 28px;
+}
+
+/* Clickable cards */
+.program-link-card {
+  display: block;
+  text-decoration: none !important;
+  margin-bottom: 30px;
+}
+
+.army-card {
+  overflow: hidden;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(200, 162, 74, 0.18);
+}
+
+.program-link-card:hover .army-card {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+}
+
+.program-card .thumb img {
+  height: 280px;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+.program-card .thumb .price span {
+  background-color: rgba(200, 162, 74, 0.95) !important;
+  color: var(--army-black) !important;
+  font-weight: 700;
+}
+
+.program-card .down-content {
+  background: var(--army-white) !important;
+  min-height: 230px;
+}
+
+.program-card .down-content h4 {
+  color: var(--army-black) !important;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.program-card .down-content p {
+  color: #2d2d2d !important;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.program-card-link {
+  margin-top: 18px;
+  color: var(--army-olive);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-size: 13px;
+}
+
+.program-link-card:hover .program-card-link {
+  color: var(--army-gold-dark);
+}
+
+/* CTA */
+.program-cta-box {
+  background: linear-gradient(135deg, var(--army-black), var(--army-charcoal));
+  padding: 45px 35px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(200, 162, 74, 0.25);
+}
+
+.program-cta-box h3 {
+  color: var(--army-gold);
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.program-cta-box p {
+  color: var(--army-white);
+  margin-bottom: 25px;
+}
+
+/* Footer */
+.footer-programs {
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(200, 162, 74, 0.15);
+  background: var(--army-black);
+}
+
+.footer-programs p {
+  color: var(--army-white);
+}
+
+.footer-programs p a {
+  color: var(--army-gold);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .header-area {
+    background-color: var(--army-white) !important;
+  }
+
+  .header-area .main-nav .logo {
+    color: var(--army-black) !important;
+  }
+
+  .header-area .main-nav .nav li a {
+    color: var(--army-black) !important;
+  }
+
+  .header-area .main-nav .nav li a:hover,
+  .header-area .main-nav .nav li a.active {
+    color: var(--army-olive) !important;
+  }
+
+  .program-card .thumb img {
+    height: 220px;
+  }
+
+  .program-intro-box {
+    padding: 24px;
+  }
+
+  .program-cta-box h3 {
+    font-size: 24px;
+  }
+}
+  /* === PROGRAM CARD OVERLAY EFFECT === */
+
+.program-card .thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.program-card .thumb::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(16,16,16,0.2);
+  transition: 0.3s;
+}
+
+.program-link-card:hover .thumb::after {
+  background: rgba(16,16,16,0.35);
+}
+
+/* === MENTORSHIP HERO FIX === */
+
+.mentorship-hero {
+  background:
+    linear-gradient(rgba(16,16,16,0.72), rgba(16,16,16,0.76)),
+    url("../images/mentorship.jpg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.mentorship-hero h6 {
+  color: var(--army-gold) !important;
+  letter-spacing: 2px;
+}
+
+.mentorship-hero h2 {
+  color: var(--army-white) !important;
+}
+
+.mentorship-page-section {
+  background:
+    linear-gradient(rgba(12,12,12,0.90), rgba(18,18,18,0.92)),
+    url("../images/meetings-page-bg.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mentorship-page-section .section-heading h2 {
+  color: var(--army-white) !important;
+  border-bottom: 1px solid rgba(200, 162, 74, 0.28) !important;
+  text-align: left;
+}
+
+.mentorship-intro-box {
+  background: rgba(247, 245, 239, 0.97);
+  padding: 32px;
+  border-radius: 18px;
+  margin-bottom: 50px;
+  border-left: 5px solid var(--army-gold);
+}
+
+.mentorship-intro-box p {
+  color: var(--army-black) !important;
+}
+
+.mentorship-side-text h3 {
+  color: var(--army-gold) !important;
+}
+
+.mentorship-side-text p {
+  color: var(--army-white) !important;
+}
+
+section.heading-page.mentorship-hero {
+  background:
+    linear-gradient(rgba(16,16,16,0.72), rgba(16,16,16,0.76)),
+    url("../images/mentorship.jpg") !important;
+}
+
+/* =========================
+   GET INVOLVED SECTION
+========================= */
+
+.get-involved-row {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.engage-card {
+  background: rgba(247, 245, 239, 0.97);
+  border-radius: 20px;
+  padding: 35px;
+  height: 100%;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+  border-top: 4px solid var(--army-gold);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.engage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.22);
+}
+
+.engage-card h3 {
+  color: var(--army-olive);
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.engage-card p {
+  color: #2d2d2d;
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.engage-btn {
+  background: linear-gradient(135deg, var(--army-gold), var(--army-gold-dark));
+  color: var(--army-black);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.engage-btn:hover {
+  background: var(--army-olive);
+  color: var(--army-white);
+}
+
+/* =========================
+   APPLICATION FORMS
+========================= */
+
+.application-form-box {
+  background: rgba(247, 245, 239, 0.98);
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+  border-left: 5px solid var(--army-gold);
+
+  /* animation base */
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.application-form-box h3 {
+  color: var(--army-olive);
+  text-align: center;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.application-form-box input,
+.application-form-box textarea {
+  width: 100%;
+  border: 1px solid #d7d1c3;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #2d2d2d;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.application-form-box input:focus,
+.application-form-box textarea:focus {
+  border-color: var(--army-gold);
+  box-shadow: 0 0 0 3px rgba(200, 162, 74, 0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 767px) {
+  .engage-card,
+  .application-form-box {
+    padding: 24px;
+  }
+
+  .engage-card h3,
+  .application-form-box h3 {
+    font-size: 22px;
+  }
+}
+
+.mentorship-logo {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mentorship-logo img {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
+}
+
+.mentorship-logo img:hover {
+  transform: scale(1.08);
+}
