@@ -377,6 +377,9 @@ header
 .background-header .main-nav .nav li.has-sub:after {
   color: #1e1e1e;
 }
+.has-sub:hover .sub-menu {
+    display: block !important;
+}
 
 .header-area .main-nav .nav li.has-sub ul.sub-menu {
   position: absolute;
@@ -599,7 +602,7 @@ header
     display: block !important;
   }
   .header-area .main-nav {
-    overflow: hidden;
+    overflow: visible;
   }
   .header-area .main-nav .nav {
     float: none;
@@ -1829,3 +1832,4 @@ responsive
   }
 
 }
+

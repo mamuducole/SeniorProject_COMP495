@@ -246,7 +246,7 @@
         dropdownOpener.each(function () {
             var _this = $(this);
 
-            _this.on('tap click', function (e) {
+            _this.on('click', function (e) {
                 var thisItemParent = _this.parent('li'),
                     thisItemParentSiblingsWithDrop = thisItemParent.siblings('.has-sub');
 
