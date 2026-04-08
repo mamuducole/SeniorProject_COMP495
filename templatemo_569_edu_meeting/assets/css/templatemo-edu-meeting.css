@@ -698,6 +698,7 @@ banner
     max-width: 100%;
     max-height: 100vh;
     object-fit: cover;
+    object-position: center 30%;
     z-index: -1;
 }
 
@@ -1494,7 +1495,7 @@ upcoming meetings page
 */
 
 section.meetings-page {
-  background-image: url(../images/meetings-page-bg.jpg);
+  background-image: url(../images/scholarshipbackground.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1954,11 +1955,13 @@ a:hover {
 /* Page hero */
 .programs-hero {
   background:
-    linear-gradient(rgba(16,16,16,0.68), rgba(16,16,16,0.72)),
-    url("../images/heading-bg.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    linear-gradient(rgba(16,16,16,0.6), rgba(16,16,16,0.65)),
+    url("../images/programs2.jpg") !important;
+
+  background-size: 110% !important;       /* 👈 zoom OUT (increase % = zoom IN, decrease = zoom OUT) */
+  background-position: center 70% !important; /* 👈 move image DOWN */
+  background-repeat: no-repeat !important;
+  background-color: #111; /* fills empty space nicely */
 }
 
 .programs-hero h6 {
@@ -2024,7 +2027,8 @@ a:hover {
 .program-card .thumb img {
   height: 280px;
   object-fit: cover;
-  filter: brightness(0.9) contrast(1.05);
+  object-position: center 40%;
+  filter: brightness(1.25) contrast(1.05);
 }
 
 .program-card .thumb .price span {
@@ -2175,12 +2179,89 @@ a:hover {
 
 .mentorship-page-section {
   background:
-    linear-gradient(rgba(12,12,12,0.90), rgba(18,18,18,0.92)),
+    linear-gradient(rgba(12,12,12,0.72), rgba(18,18,18,0.78)),
     url("../images/meetings-page-bg.jpg");
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.application-form-box {
+  background: linear-gradient(135deg, #101010, #1a1a1a);
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(200,162,74,0.25);
+}
+
+.application-form-box h3 {
+  color: var(--army-gold) !important;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Inputs */
+.application-form-box input,
+.application-form-box textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,162,74,0.35);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: var(--army-white);
+  outline: none;
+  box-shadow: none;
+  margin-bottom: 18px;
+}
+
+/* Placeholder text */
+.application-form-box input::placeholder,
+.application-form-box textarea::placeholder {
+  color: rgba(247,245,239,0.6);
+}
+
+/* Focus effect */
+.application-form-box input:focus,
+.application-form-box textarea:focus {
+  border-color: var(--army-gold);
+  background: rgba(255,255,255,0.08);
+}
+
+/* Textarea */
+.application-form-box textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Button */
+.application-form-box .engage-btn {
+  background: var(--army-gold);
+  color: var(--army-black);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+/* Hover */
+.application-form-box .engage-btn:hover {
+  background: var(--army-gold-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Spacing */
+.application-form-box .row > div {
+  margin-bottom: 8px;
 }
 
 .mentorship-page-section .section-heading h2 {
@@ -2215,147 +2296,306 @@ section.heading-page.mentorship-hero {
     url("../images/mentorship.jpg") !important;
 }
 
-/* =========================
-   GET INVOLVED SECTION
-========================= */
-
 .get-involved-row {
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .engage-card {
-  background: rgba(247, 245, 239, 0.97);
+  background: linear-gradient(135deg, rgba(16,16,16,0.96), rgba(26,26,26,0.96));
+  border: 1px solid rgba(200,162,74,0.28);
   border-radius: 20px;
-  padding: 35px;
-  height: 100%;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-  border-top: 4px solid var(--army-gold);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.engage-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.22);
+  padding: 32px;
+  min-height: 260px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.28);
 }
 
 .engage-card h3 {
-  color: var(--army-olive);
+  color: var(--army-gold) !important;
   font-size: 28px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 .engage-card p {
-  color: #2d2d2d;
+  color: rgba(247,245,239,0.9) !important;
   font-size: 15px;
   line-height: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
 .engage-btn {
-  background: linear-gradient(135deg, var(--army-gold), var(--army-gold-dark));
-  color: var(--army-black);
+  display: inline-block;
+  background: var(--army-gold);
+  color: var(--army-black) !important;
   border: none;
-  padding: 14px 28px;
   border-radius: 30px;
+  padding: 14px 28px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: 0.3s ease;
-  cursor: pointer;
 }
 
 .engage-btn:hover {
-  background: var(--army-olive);
-  color: var(--army-white);
+  background: var(--army-gold-dark);
+  color: #fff !important;
+  transform: translateY(-2px);
 }
 
-/* =========================
-   APPLICATION FORMS
-========================= */
-
 .application-form-box {
-  background: rgba(247, 245, 239, 0.98);
+  background: linear-gradient(135deg, #4b48484a, #47444431);
   border-radius: 20px;
   padding: 40px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.16);
-  border-left: 5px solid var(--army-gold);
-
-  /* animation base */
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: all 0.4s ease;
+  margin-top: 30px;
+  box-shadow: 0 15px 40px rgba(63, 59, 59, 0.5);
+  border: 1px solid rgba(200,162,74,0.25);
 }
 
 .application-form-box h3 {
-  color: var(--army-olive);
+  color: var(--army-gold) !important;
   text-align: center;
   margin-bottom: 25px;
-  text-transform: uppercase;
   font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-
-/* =========================
-   INPUTS
-========================= */
 
 .application-form-box input,
 .application-form-box textarea {
   width: 100%;
-  border: 1px solid #d7d1c3;
-  background: #fff;
-  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,162,74,0.35);
+  border-radius: 12px;
   padding: 14px 16px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #2d2d2d;
+  font-size: 15px;
+  color: var(--army-white);
   outline: none;
-  transition: 0.2s ease;
+  box-shadow: none;
+  margin-bottom: 18px;
+}
+
+.application-form-box input::placeholder,
+.application-form-box textarea::placeholder {
+  color: rgba(247,245,239,0.6);
 }
 
 .application-form-box input:focus,
 .application-form-box textarea:focus {
   border-color: var(--army-gold);
-  box-shadow: 0 0 0 3px rgba(200, 162, 74, 0.15);
+  background: rgba(255,255,255,0.08);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.application-form-box textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.application-form-box .row > div {
+  margin-bottom: 8px;
+}
+
+/* === SCHOLARSHIP PAGE === */
+
+.scholarship-hero {
+  background: linear-gradient(135deg, #1c1c1c, #0d0d0d) !important;
+}
+
+.scholarship-hero h6 {
+  color: var(--army-gold) !important;
+  letter-spacing: 2px;
+}
+
+.scholarship-hero h2 {
+  color: var(--army-white) !important;
+}
+
+.scholarship-page-section {
+  background:
+    linear-gradient(rgba(12,12,12,0.82), rgba(18,18,18,0.78)),
+    url("../images/scholarshipbackground.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.scholarship-page-section .section-heading h2 {
+  color: var(--army-white) !important;
+  border-bottom: 1px solid rgba(200, 162, 74, 0.28) !important;
+  text-align: left;
+}
+
+.scholarship-intro-box {
+  background: rgba(247, 245, 239, 0.97);
+  padding: 32px;
+  border-radius: 18px;
+  margin-bottom: 50px;
+  border-left: 5px solid var(--army-gold);
+}
+
+.scholarship-intro-box p {
+  color: var(--army-black) !important;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.scholarship-image img {
+  border-radius: 20px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+  height: 100%;
+  object-fit: cover;
+}
+
+.scholarship-side-text h3 {
+  color: var(--army-gold) !important;
+  margin-bottom: 18px;
+  font-size: 30px;
+}
+
+.scholarship-side-text p {
+  color: var(--army-white) !important;
+  line-height: 28px;
+  margin-bottom: 18px;
+}
+
+.scholarship-feature-row,
+.scholarship-detail-row,
+.scholarship-recipients-row,
+.scholarship-opportunity-row,
+.scholarship-cta-row {
+  margin-top: 35px;
+}
+
+.scholarship-info-card,
+.scholarship-detail-box,
+.recipient-box,
+.scholarship-highlight-box,
+.scholarship-cta-box {
+  background: linear-gradient(135deg, rgba(16,16,16,0.95), rgba(26,26,26,0.95));
+  border: 1px solid rgba(200,162,74,0.22);
+  border-radius: 20px;
+  padding: 32px;
+  height: 100%;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+}
+
+.scholarship-info-card .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(200,162,74,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.scholarship-info-card .icon i {
+  color: var(--army-gold);
+  font-size: 28px;
+}
+
+.scholarship-info-card h4,
+.scholarship-detail-box h3,
+.recipient-box h3,
+.scholarship-highlight-box h3,
+.scholarship-cta-box h3 {
+  color: var(--army-gold) !important;
+  margin-bottom: 15px;
+}
+
+.scholarship-info-card p,
+.scholarship-detail-box p,
+.scholarship-highlight-box p,
+.scholarship-cta-box p {
+  color: rgba(247,245,239,0.92) !important;
+  line-height: 28px;
+}
+
+.recipient-entry {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.recipient-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.recipient-entry h4 {
+  color: var(--army-white) !important;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.recipient-entry p {
+  color: rgba(247,245,239,0.88) !important;
+  margin-bottom: 6px;
+}
+
+.recipient-entry span {
+  color: var(--army-gold);
+  font-weight: 600;
+}
+
+.scholarship-link-btn {
+  margin-top: 25px;
+}
 
 @media (max-width: 767px) {
-  .engage-card,
-  .application-form-box {
+  .scholarship-side-text {
+    margin-top: 30px;
+  }
+
+  .scholarship-info-card,
+  .scholarship-detail-box,
+  .recipient-box,
+  .scholarship-highlight-box,
+  .scholarship-cta-box {
     padding: 24px;
   }
 
-  .engage-card h3,
-  .application-form-box h3 {
-    font-size: 22px;
+  .scholarship-side-text h3,
+  .scholarship-detail-box h3,
+  .recipient-box h3,
+  .scholarship-highlight-box h3,
+  .scholarship-cta-box h3 {
+    font-size: 24px;
+  }
+
+  .recipient-entry h4 {
+    font-size: 18px;
   }
 }
-
-.mentorship-logo {
-  margin-top: 20px;
-  text-align: center;
+.scholarship-page-section {
+  background:
+    linear-gradient(rgba(12,12,12,0.65), rgba(18,18,18,0.7)),
+    url("../images/scholarshipbackground.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.mentorship-logo img {
-  width: 90px;
-  height: auto;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
-  transition: transform 0.3s ease;
+section.heading-page.scholarship-hero h6 {
+  color: var(--army-gold) !important;
 }
 
-.mentorship-logo img:hover {
-  transform: scale(1.08);
+section.heading-page.scholarship-hero h2 {
+  color: var(--army-white) !important;
+}
+.mentorship-page-section h2,
+.mentorship-page-section h3,
+.mentorship-page-section h4 {
+  color: var(--army-gold) !important;
+}
+
+.mentorship-page-section p:not(.intro-text) {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+.intro-text {
+  color: var(--army-black) !important;
 }
