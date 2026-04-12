@@ -724,7 +724,7 @@ banner
 
 .main-banner .caption h6 {
   margin-top: 0px;
-  font-size: 15px;
+  font-size: 24px;
   text-transform: uppercase;
   font-weight: 600;
   color: #fff;
@@ -734,7 +734,7 @@ banner
 .main-banner .caption h2 {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 36px;
+  font-size: 35px;
   text-transform: uppercase;
   font-weight: 800;
   color: #fff;
@@ -749,7 +749,7 @@ banner
 
 .main-banner .caption p {
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   max-width: 570px;
 }
 
@@ -1259,7 +1259,7 @@ our facts
 */
 
 section.our-facts {
-  background-image: url(../images/facts-bg.jpg);
+  background-image: url(../images/LandingPage-soldiers.png);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1305,11 +1305,29 @@ section.our-facts h2 {
 .new-students {
   margin-top: 45px;
 }
+.money-counter {
+  margin: 5px 0px;
+  color: #f5a425;
+  font-weight: 700;
+  font-size: 42px;
+}
+
+/* $ in front */
+.money-counter::before {
+  content: '$';
+  margin-right: 2px;
+}
+
+/* + at the end */
+.money-counter::after {
+  content: '+';
+  margin-left: 2px;
+}
 
 section.our-facts .video {
   text-align: center;
   margin-left: 70px;
-  background-image: url(../images/video-item-bg.jpg);
+  background-image: url(../images/ROCKS-Logo.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -2599,3 +2617,4 @@ section.heading-page.scholarship-hero h2 {
 .intro-text {
   color: var(--army-black) !important;
 }
+
