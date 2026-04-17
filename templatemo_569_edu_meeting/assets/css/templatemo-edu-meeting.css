@@ -1513,7 +1513,7 @@ upcoming meetings page
 */
 
 section.meetings-page {
-  background-image: url(../images/scholarshipbackground.jpg);
+  background-image: url(../images/scholarshipbackground.jpeg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -2476,6 +2476,7 @@ section.heading-page.mentorship-hero {
   color: var(--army-white) !important;
   line-height: 28px;
   margin-bottom: 18px;
+  font-size: 22px;
 }
 
 .scholarship-feature-row,
@@ -2530,6 +2531,7 @@ section.heading-page.mentorship-hero {
 .scholarship-cta-box p {
   color: rgba(247,245,239,0.92) !important;
   line-height: 28px;
+  font-size: 18px;
 }
 
 .recipient-entry {
