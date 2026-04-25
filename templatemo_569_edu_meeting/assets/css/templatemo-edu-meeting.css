@@ -1477,7 +1477,7 @@ heading page
 */
 
 section.heading-page {
-  background-image: url(../images/heading-bg.jpg);
+  background-image: url(https://images04.military.com/sites/default/files/styles/full/public/2022-03/mil%20in%20person%20networking%201200.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1491,7 +1491,7 @@ section.heading-page h6 {
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #fff;
+  color:#fff;
   letter-spacing: 1px;
 }
 
