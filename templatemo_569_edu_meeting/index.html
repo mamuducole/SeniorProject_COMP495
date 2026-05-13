@@ -1,5 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+.custom-footer {
+  background: #000;
+  border-top: 3px solid #d4a017;
+  padding: 22px 20px;
+  color: white;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.footer-brand p {
+  color: #cfcfcf;
+  font-size: 14px;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.footer-socials,
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.footer-socials a,
+.footer-links a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer-socials a {
+  color: #d4a017 !important;
+}
+
+.footer-links a {
+  color: white !important;
+}
+
+.footer-socials a:hover,
+.footer-links a:hover {
+  color: #d4a017 !important;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: #9f9f9f;
+  margin-top: 10px;
+}
+
+</style>
+
 
   <head>
 
@@ -413,50 +477,40 @@ work.
       </div>
     </div>
     </section>
-    <footer style="
-      background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)),
-              url('assets/images/meetings-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 50px 60px;
-      color: white;
-      border-top: 3px solid #f5c542;
-    ">
+    <footer class="custom-footer">
+      <div class="footer-content">
 
-      <!-- Social Links -->
-      <div style="margin-bottom: 25px;">
-        <a href="https://www.facebook.com/rocksinc" target="_blank" style="margin-right: 30px; color: white; text-decoration:none;">Facebook</a>
+        <div class="footer-brand">
+          <div>
+            <h2>THE ROCKS, Inc.</h2>
+            <p>
+              The ROCKS, Inc. is a tax-exempt non-profit organization under Section 501(c)(3).
+              Donations are tax deductible.
+            </p>
+          </div>
 
-        <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank" style="margin-right: 30px; color: white; text-decoration:none;">YouTube</a>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/rocksinc" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">YouTube</a>
+            <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
 
-        <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank" style="margin-right: 30px; color: white; text-decoration:none;">LinkedIn</a>
+        <div class="footer-links">
+          <a href="#">FAQs</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Accessibility</a>
+          <a href="About Us.html">About Us</a>
+          <a href="#">Resources</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-copy">
+          &copy; 2026 The ROCKS, Inc. All rights reserved.
+        </div>
+
       </div>
-
-      <!-- Nonprofit Text -->
-      <div style="margin-bottom: 30px; max-width: 900px;">
-        <p>
-          The ROCKS, Inc. is a tax-exempt non-profit organization under Section 501(c)(3).
-          Donations are tax deductible.
-        </p>
-      </div>
-
-      <!-- Footer Navigation -->
-      <div style="
-        display: flex;
-        flex-wrap: wrap;
-        gap: 60px;
-        font-weight: bold;
-      font-size: 18px;
-      ">
-        <a href="" style="color:white; text-decoration:none;">FAQs</a>
-        <a href="" style="color:white; text-decoration:none;">Privacy Policy</a>
-        <a href="" style="color:white; text-decoration:none;">Accessibility</a>
-        <a href="About Us.html" style="color:white; text-decoration:none;">About Us</a>
-        <a href="" style="color:white; text-decoration:none;">Resources</a>
-        <a href="ContactUs.html" style="color:white; text-decoration:none;">Contact Us</a>
-      </div>
-
-  </footer>
+    </footer>
  
 
   <!-- Scripts -->
