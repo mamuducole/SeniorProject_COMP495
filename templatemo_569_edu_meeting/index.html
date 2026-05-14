@@ -1,6 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <style>
+.site-search-box {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  margin-top: 8px;
+
+  width: 340px;
+
+  background: rgba(15, 15, 15, 0.98);
+  border: 1px solid rgba(212, 160, 23, 0.5);
+  border-radius: 0 0 14px 14px;
+
+  padding: 14px;
+  z-index: 9999;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+
+  animation: dropdownFade 0.25s ease;
+}
+
+.site-search-box input {
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: 8px;
+
+  background: #1a1a1a;
+  color: white;
+
+  font-size: 14px;
+  outline: none;
+}
+
+.site-search-box input::placeholder {
+  color: #aaa;
+}
+
+.site-search-box input:focus {
+  border-color: #d4a017;
+  box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+}
+
+#searchResults {
+  margin-top: 10px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+#searchResults a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+#searchResults a:hover {
+  background: rgba(212,160,23,0.15);
+  color: #d4a017;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#searchResults a:hover {
+  color: #d4a017;
+}
+.search-highlight {
+  background-color: #a29981;
+  color: #111;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 700;
+}
 .custom-footer {
   background: #000;
   border-top: 3px solid #d4a017;
@@ -53,7 +142,7 @@
 
 .footer-socials a:hover,
 .footer-links a:hover {
-  color: #d4a017 !important;
+  color: #c4af7c !important;
 }
 
 .footer-copy {
@@ -143,10 +232,10 @@ https://templatemo.com/tm-569-edu-meeting
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li><a href="mentorship.html">Join Now</a></li>
+                          <li><a href="JoinNow.html">Join Now</a></li>
                           <li><a href="programs.html">Programs</a></li>
                           <li><a href="Chapters.html">Find A Chapter</a></li>
-                          <li><a href="">Donate</a></li>
+                          <li><a href="donate.html">Donate</a></li>
                           <!-- About Us Dropdown -->
                           <li class="has-sub">
                             <a href="javascript:void(0)">About Us</a>
@@ -164,7 +253,7 @@ https://templatemo.com/tm-569-edu-meeting
                           <!-- <li><a href="About Us.html">About Us</a></li> -->
                           
                           <li><a href="">Log in</a></li>
-                          <li><a href="">Search</a></li>
+                          <li><a href="#" id="searchToggle">Search</a></li>
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -176,6 +265,10 @@ https://templatemo.com/tm-569-edu-meeting
       </div>
   </header>
   <!-- ***** Header Area End ***** -->
+  <div id="searchBox" class="site-search-box">
+    <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
+    <div id="searchResults"></div>
+  </div>
 
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
@@ -571,6 +664,144 @@ work.
           checkSection();
         });
     </script>
-</body>
+    <script>
+  const searchToggle = document.getElementById("searchToggle");
+  const searchBox = document.getElementById("searchBox");
+  const searchInput = document.getElementById("siteSearchInput");
+  const searchResults = document.getElementById("searchResults");
 
-</html>
+  // Open / close search box
+  searchToggle.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    if (searchBox.style.display === "block") {
+      searchBox.style.display = "none";
+    } else {
+      searchBox.style.display = "block";
+      searchInput.focus();
+    }
+  });
+
+  // Search entire visible website text
+  searchInput.addEventListener("input", function() {
+
+    const query = searchInput.value.toLowerCase().trim();
+
+    searchResults.innerHTML = "";
+
+    if (query === "") return;
+
+    // Search all sections + footer
+    const searchableSections = document.querySelectorAll("section, footer");
+
+    let foundResults = 0;
+
+    searchableSections.forEach((section, index) => {
+
+      const sectionText = section.innerText.toLowerCase();
+
+      if (sectionText.includes(query)) {
+
+        // Add automatic ID if missing
+        if (!section.id) {
+          section.id = "search-section-" + index;
+        }
+
+        // Find heading
+        const heading = section.querySelector("h1, h2, h3, h4");
+
+        let title = "Matching Section";
+
+        if (heading) {
+          title = heading.innerText;
+        }
+
+        // Create result link
+        const resultLink = document.createElement("a");
+
+        resultLink.href = "#" + section.id;
+        resultLink.textContent = title;
+
+        // Smooth scroll
+        resultLink.addEventListener("click", function(e) {
+
+          e.preventDefault();
+
+          removeHighlights();
+
+          highlightText(section, query);
+
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+          searchBox.style.display = "none";
+        });
+
+        searchResults.appendChild(resultLink);
+
+        foundResults++;
+      }
+    });
+
+    // No results
+    if (foundResults === 0) {
+
+      searchResults.innerHTML = `
+        <p style="padding:8px 0; color:#777;">
+          No results found.
+        </p>
+      `;
+    }
+  });
+
+  // Close search when clicking outside
+  document.addEventListener("click", function(e) {
+
+    if (
+      !searchBox.contains(e.target) &&
+      !searchToggle.contains(e.target)
+    ) {
+      searchBox.style.display = "none";
+    }
+  });
+  function removeHighlights() {
+  document.querySelectorAll(".search-highlight").forEach(function(span) {
+    span.replaceWith(document.createTextNode(span.textContent));
+  });
+}
+
+function highlightText(element, query) {
+  const walker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT,
+    null,
+    false
+  );
+
+  const textNodes = [];
+
+  while (walker.nextNode()) {
+    textNodes.push(walker.currentNode);
+  }
+
+  textNodes.forEach(function(node) {
+    const text = node.nodeValue;
+    const lowerText = text.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+
+    if (lowerText.includes(lowerQuery)) {
+      const regex = new RegExp("(" + query + ")", "gi");
+      const spanWrapper = document.createElement("span");
+
+      spanWrapper.innerHTML = text.replace(
+        regex,
+        '<span class="search-highlight">$1</span>'
+      );
+
+      node.parentNode.replaceChild(spanWrapper, node);
+    }
+  });
+}
+</script>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | THE ROCKS, Inc.</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
+    url("assets/images/scholarshipbackground.jpeg") center center / cover fixed no-repeat;
+  color: white;
+}
+
+.header-area {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.donate-page {
+  overflow-x: hidden;
+}
+
+.donate-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 180px 0 100px;
+}
+
+.donate-hero-content {
+  max-width: 850px;
+}
+
+.donate-hero-content::before {
+  content: "";
+  display: block;
+  width: 540px;
+  max-width: 100%;
+  height: 2px;
+  background: #d4a017;
+  margin-bottom: 28px;
+}
+
+.donate-eyebrow {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f1f1f1;
+  margin-bottom: 28px;
+}
+
+.donate-hero h1 {
+  font-size: 84px;
+  line-height: 1.05;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 28px;
+}
+
+.donate-hero h1 span {
+  color: #d4a017;
+}
+
+.donate-hero p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ededed;
+  max-width: 720px;
+}
+
+.donate-hero-buttons {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.donate-primary-btn,
+.donate-secondary-btn,
+.fund-row a {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.donate-primary-btn,
+.fund-row a {
+  background: #d4a017;
+  color: #111;
+}
+
+.donate-primary-btn:hover,
+.fund-row a:hover {
+  background: white;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+.donate-secondary-btn {
+  border: 2px solid white;
+  color: white;
+}
+
+.donate-secondary-btn:hover {
+  background: white;
+  color: #111;
+}
+
+.donate-section {
+  padding: 100px 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(212,160,23,0.18);
+}
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.donate-text h2 {
+  font-size: 50px;
+  line-height: 1.15;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.donate-text h2 span {
+  color: #d4a017;
+}
+
+.donate-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #e8e8e8;
+  margin-bottom: 18px;
+}
+
+.donate-image {
+  min-height: 520px;
+  border-radius: 22px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.35);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+}
+
+.impact-img {
+  background-image: url("assets/images/TableConversation.jpg");
+}
+
+.legacy-img {
+  background-image: url("assets/images/LibraryMentorship.jpg");
+}
+
+/* FUNDS CLEAN LIST */
+
+.donation-funds-heading {
+  text-align: left;
+  max-width: 850px;
+  margin: 0 0 55px;
+}
+
+.section-kicker {
+  color: #d4a017 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.donation-funds-heading h2 {
+  font-size: 52px;
+  line-height: 1.12;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 18px;
+}
+
+.donation-funds-heading p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #e7e7e7;
+}
+
+.fund-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fund-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: center;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(212,160,23,0.18);
+  border-left: 4px solid rgba(212,160,23,0.8);
+  border-radius: 18px;
+  padding: 28px 32px;
+  transition: 0.25s ease;
+}
+
+.fund-row:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateX(6px);
+}
+
+.featured-row {
+  background: rgba(212,160,23,0.13);
+}
+
+.fund-number {
+  display: inline-block;
+  color: #d4a017;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.fund-row h3 {
+  font-size: 26px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.fund-row p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dedede;
+  margin: 0;
+  max-width: 760px;
+}
+
+.fund-row a {
+  white-space: nowrap;
+}
+
+.other-ways-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.give-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.give-list-item {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(212,160,23,0.25);
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+}
+
+.give-list-item span {
+  font-size: 32px;
+  color: #d4a017;
+}
+
+.donate-final {
+  text-align: center;
+}
+
+.donate-final h2 {
+  font-size: 46px;
+  font-weight: 900;
+  color: #d4a017;
+  margin-bottom: 22px;
+}
+
+.donate-final p {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #f1f1f1;
+}
+
+@media (max-width: 992px) {
+  .donate-hero h1 {
+    font-size: 58px;
+  }
+
+  .donate-grid,
+  .other-ways-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .donate-hero {
+    padding: 150px 0 70px;
+  }
+
+  .donate-hero h1 {
+    font-size: 42px;
+  }
+
+  .donate-image {
+    min-height: 340px;
+  }
+
+  .fund-row {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-funds-heading h2 {
+    font-size: 36px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header-area header-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <a href="index.html" class="logo">THE ROCKS, Inc.</a>
+
+          <ul class="nav">
+            <li><a href="mentorship.html">Join Now</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="Chapters.html">Find A Chapter</a></li>
+            <li><a href="donate.html" class="active">Donate</a></li>
+
+            <li class="has-sub">
+              <a href="javascript:void(0)">About Us</a>
+              <ul class="sub-menu">
+                <li><a href="About Us.html">History</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <a class="menu-trigger">
+            <span>Menu</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="donate-page">
+
+  <section class="donate-hero">
+    <div class="container">
+      <div class="donate-hero-content">
+        <div class="donate-eyebrow">
+          Supporting mentorship, scholarship, leadership development,
+          and the future of military and civilian leaders.
+        </div>
+
+        <h1>Invest in the <span>Legacy</span> of The ROCKS.</h1>
+
+        <p>
+          Your donation helps The ROCKS, Inc. continue strengthening the officer corps
+          through mentorship, professional development, scholarships, networking,
+          and outreach programs that create lasting impact.
+        </p>
+
+        <div class="donate-hero-buttons">
+          <a href="#donation-funds" class="donate-primary-btn">Donate Now</a>
+          <a href="#other-ways" class="donate-secondary-btn">Other Ways to Give</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section">
+    <div class="container">
+      <div class="donate-grid">
+        <div class="donate-text">
+          <h2>Invest in Leadership. <span>Invest in Service.</span></h2>
+          <p>
+            Every donation supports programs that provide mentorship, professional guidance,
+            scholarships, and leadership opportunities for cadets, officers,
+            warrant officers, and federal civilian leaders.
+          </p>
+          <p>
+            Whether you support scholarships, operations, leadership awards,
+            or legacy projects, your contribution helps preserve the organization’s
+            history while preparing future leaders.
+          </p>
+        </div>
+
+        <div class="donate-image impact-img"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section donation-funds-section" id="donation-funds">
+    <div class="container">
+      <div class="donation-funds-heading">
+        <p class="section-kicker">Choose Your Impact</p>
+        <h2>Support the fund that speaks to your mission.</h2>
+        <p>
+          Each gift helps The ROCKS, Inc. continue building leaders through mentorship,
+          scholarships, service, and legacy.
+        </p>
+      </div>
+
+      <div class="fund-list">
+
+        <div class="fund-row">
+          <div>
+            <span class="fund-number">01</span>
+            <h3>National ROCKS Operating Fund</h3>
+            <p>Supports daily operations, administrative needs, member services, and chapter support.</p>
+          </div>
+          <a href="https://www.rocksinc.org/content.aspx?page_id=305&club_id=459944&item_id=2211">Donate</a>
+        </div>
+
+        <div class="fund-row featured-row">
+          <div>
+            <span class="fund-number">02</span>
+            <h3>R.C. Cartwright Scholarship Fund</h3>
+            <p>Funds scholarship initiatives for cadets, students, and emerging leaders.</p>
+          </div>
+          <a href="https://www.rocksinc.org/content.aspx?page_id=305&club_id=459944&item_id=1068">Donate</a>
+        </div>
+
+        <div class="fund-row">
+          <div>
+            <span class="fund-number">03</span>
+            <h3>LTG Edward Honor Leadership Fund</h3>
+            <p>Recognizes an outstanding graduating senior through a leadership award.</p>
+          </div>
+          <a href="https://www.rocksinc.org/content.aspx?page_id=305&club_id=459944&item_id=1692">Donate</a>
+        </div>
+
+        <div class="fund-row">
+          <div>
+            <span class="fund-number">04</span>
+            <h3>Board Members' Annual Donation</h3>
+            <p>Shows personal investment and sets an example for members and contributors.</p>
+          </div>
+          <a href="https://www.rocksinc.org/content.aspx?page_id=305&club_id=459944&item_id=8619">Donate</a>
+        </div>
+
+        <div class="fund-row">
+          <div>
+            <span class="fund-number">05</span>
+            <h3>The Journey Book Project</h3>
+            <p>Preserves the organization’s history and legacy from 1974 through 2015.</p>
+          </div>
+          <a href="https://www.rocksinc.org/content.aspx?page_id=305&club_id=459944&item_id=1693">Donate</a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section">
+    <div class="container">
+      <div class="donate-grid">
+        <div class="donate-text">
+          <h2>Mentorship Creates <span>Lasting Impact.</span></h2>
+          <p>
+            The ROCKS, Inc. continues to build meaningful relationships
+            that guide, support, and empower future military and civilian leaders.
+          </p>
+          <p>
+            Your support helps create spaces where leaders can connect,
+            grow, and inspire the next generation.
+          </p>
+
+          <div class="donate-hero-buttons">
+            <a href="#donation-funds" class="donate-primary-btn">Support The Mission</a>
+          </div>
+        </div>
+
+        <div class="donate-image" style='background-image: url("assets/images/tentmentorship.jpg");'></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section">
+    <div class="container">
+      <div class="donate-grid">
+        <div class="donate-image legacy-img"></div>
+
+        <div class="donate-text">
+          <h2>We Use Your Support To <span>Create Impact.</span></h2>
+          <p>
+            Donations help fund scholarships, mentorship opportunities,
+            leadership awards, strengthen chapters, and preserve The ROCKS
+            legacy for future generations.
+          </p>
+          <p>
+            Your support is more than a gift. It is an investment in service,
+            excellence, leadership, and community.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section" id="other-ways">
+    <div class="container">
+      <div class="other-ways-grid">
+        <div class="donate-text">
+          <h2>Other Ways That You Can Give</h2>
+          <p>
+            Supporters may contribute toward scholarship efforts, legacy projects,
+            leadership awards, outreach programs, and operational support
+            that helps sustain The ROCKS mission.
+          </p>
+        </div>
+
+        <div class="give-list">
+          <div class="give-list-item">Operating Support <span>+</span></div>
+          <div class="give-list-item">Scholarship Giving <span>+</span></div>
+          <div class="give-list-item">Leadership Awards <span>+</span></div>
+          <div class="give-list-item">Legacy Projects <span>+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section donate-final">
+    <div class="container">
+      <h2>Your Gift Builds Legacy</h2>
+      <p>
+        The ROCKS, Inc. is a tax-exempt nonprofit organization under Section 501(c)(3).
+        Donations support mentorship, professional leadership development, scholarships,
+        networking, and outreach initiatives that strengthen military and civilian leaders.
+      </p>
+
+      <a href="#donation-funds" class="donate-primary-btn">Donate Now</a>
+    </div>
+  </section>
+
+</div>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/lightbox.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/video.js"></script>
+<script src="assets/js/slick-slider.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
