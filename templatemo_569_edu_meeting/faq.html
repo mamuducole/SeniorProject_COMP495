@@ -10,75 +10,109 @@
 
   <style>
     body {
-      background: #0b0b0b;
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      color: white;
+      color: #fff;
+      background: #0b0b0b;
     }
 
     .faq-page {
-      padding: 120px 20px 70px;
-      background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
-            url("assets/images/scholarshipbackground.jpeg");
+      padding: 120px 20px 80px;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("assets/images/scholarshipbackground.jpeg");
       background-size: cover;
       background-position: center;
       min-height: 100vh;
     }
 
     .faq-container {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .faq-header {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 60px;
     }
 
     .faq-header h1 {
-      font-size: 42px;
-      color: #fff;
-      margin-bottom: 15px;
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .faq-header p {
-      color: #d6d6d6;
       font-size: 16px;
+      color: #cfcfcf;
+      max-width: 650px;
+      margin: 0 auto;
     }
 
     .faq-category {
-      margin-bottom: 35px;
+      margin-bottom: 40px;
     }
 
     .faq-category h2 {
+      font-size: 22px;
       color: #d4a017;
-      font-size: 24px;
       margin-bottom: 18px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      padding-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      letter-spacing: 0.3px;
     }
 
     details {
-        background: rgba(255, 255, 255, 0.92);
-        border: none;
-        border-left: 5px solid #d4a017;
-        border-radius: 10px;
-        padding: 16px 20px;
-        margin-bottom: 14px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      transition: all 0.25s ease;
+      border-left: 5px solid transparent;
+    }
+
+    details:hover {
+      transform: translateY(-2px);
+      border-left: 5px solid #d4a017;
+    }
+
+    details[open] {
+      border-left: 5px solid #d4a017;
     }
 
     summary {
-        cursor: pointer;
-        font-weight: 700;
-        color: #111;
-        font-size: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 18px;
+      color: #d4a017;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary::after {
+      content: '−';
     }
 
     details p,
     details ul {
-        color: #333;
-        margin-top: 12px;
-        line-height: 1.7;
+      margin-top: 12px;
+      color: #333;
+      line-height: 1.7;
+      font-size: 14px;
     }
 
     details ul {
@@ -86,26 +120,129 @@
     }
 
     details li {
-      list-style: disc;
+      margin-bottom: 6px;
     }
 
     .faq-cta {
+      margin-top: 60px;
       text-align: center;
-      margin-top: 45px;
-      padding: 30px;
+      padding: 35px;
+      border-radius: 16px;
       background: rgba(212,160,23,0.12);
-      border-radius: 15px;
+      backdrop-filter: blur(8px);
+    }
+
+    .faq-cta h2 {
+      margin-bottom: 10px;
+    }
+
+    .faq-cta p {
+      color: #ddd;
+      margin-bottom: 15px;
     }
 
     .faq-cta a {
-      color: #d4a017;
-      font-weight: 700;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #d4a017;
+      color: #111;
+      font-weight: 600;
       text-decoration: none;
+      transition: 0.2s ease;
     }
+
+    .faq-cta a:hover {
+      transform: scale(1.05);
+    }
+
+    
   </style>
 </head>
 
 <body>
+  
+  <!-- Sub Header -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <!--Tati changed this to say The Rocks Inc march 7-->
+            <p></p>
+          </div>                                                                                                                                              
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/rocksinc" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">
+                  <i class="fa fa-youtube"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          THE ROCKS, Inc.
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="mentorship.html">Join Now</a></li>
+                          <li><a href="programs.html">Programs</a></li>
+                          <li><a href="Chapters.html">Find A Chapter</a></li>
+                          <li><a href="">Donate</a></li>
+                          <!-- About Us Dropdown -->
+                          <li class="has-sub">
+                            <a href="javascript:void(0)">About Us</a>
+                        
+                            <ul class="sub-menu">
+          
+                                <li><a href="About Us.html">History</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </li>
+
+
+                          
+
+                          <!-- <li><a href="About Us.html">About Us</a></li> -->
+                          
+                          <li><a href="">Log in</a></li>
+                          <li><a href="">Search</a></li>
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
 
 <section class="faq-page">
   <div class="faq-container">
@@ -119,7 +256,7 @@
       <h2>General Organization FAQs</h2>
 
       <details>
-        <summary>What is THE ROCKS, Inc.?</summary>
+        <summary>What is THE ROCKS, Inc?</summary>
         <p>THE ROCKS, Inc. is a nonprofit organization dedicated to mentorship, leadership development, scholarship opportunities, and professional growth.</p>
       </details>
 
@@ -190,7 +327,7 @@
 
       <details>
         <summary>What other programs do you offer?</summary>
-        <p>In addition to mentorship, we may offer leadership workshops, networking events, community service initiatives, professional development sessions, and educational programming.</p>
+        <p>We offer leadership workshops, networking events, community service initiatives, professional development sessions, and educational programming.</p>
       </details>
     </div>
 
