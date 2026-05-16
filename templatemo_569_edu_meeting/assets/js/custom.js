@@ -291,28 +291,29 @@
 
     }
 
-    $(window).scroll(function() {
+   $('.count-digit').each(function () {
+    var $this = $(this);
+    var originalText = $this.text().trim();
 
-        if (visible($('.count-digit'))) {
-            if ($('.count-digit').hasClass('counter-loaded')) return;
-            $('.count-digit').addClass('counter-loaded');
+    var prefix = originalText.includes('$') ? '$' : '';
+    var suffix = '';
 
-            $('.count-digit').each(function() {
-                var $this = $(this);
-                jQuery({
-                    Counter: 0
-                }).animate({
-                    Counter: $this.text()
-                }, {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function() {
-                        $this.text(Math.ceil(this.Counter));
-                    }
-                });
-            });
+    if (originalText.includes('k')) suffix += 'k';
+    if (originalText.includes('+')) suffix += '+';
+
+    var number = parseFloat(originalText.replace(/[^0-9.]/g, ''));
+
+    $({ Counter: 0 }).animate(
+        { Counter: number },
+        {
+            duration: 3000,
+            easing: 'swing',
+            step: function () {
+                $this.text(prefix + Math.ceil(this.Counter) + suffix);
+            }
         }
-    })
+    );
+});
 
 
 })(window.jQuery);
