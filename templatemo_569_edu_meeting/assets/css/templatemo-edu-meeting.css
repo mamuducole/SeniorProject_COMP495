@@ -1477,7 +1477,7 @@ heading page
 */
 
 section.heading-page {
-  background-image: url(../images/heading-bg.jpg);
+  background-image: url(https://t4.ftcdn.net/jpg/01/04/83/01/360_F_104830196_UxhH8F9zRBSicIR0C3y1oz2CMxaxjpv3.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1501,7 +1501,7 @@ section.heading-page h2 {
   font-size: 36px;
   text-transform: uppercase;
   font-weight: 800;
-  color: #fff;
+  color: black;
   letter-spacing: 1px;
 }
 
