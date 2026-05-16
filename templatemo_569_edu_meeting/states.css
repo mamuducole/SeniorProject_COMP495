@@ -1,0 +1,33 @@
+path {
+    fill: #d3d3d3;
+    stroke: #ffffff;
+    stroke-width: 1;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+}
+
+.state {
+    fill: #d3d3d3;      /* Default color */
+    stroke: #ffffff;    /* Border color */
+    stroke-width: 0.5;
+    transition: fill 0.3s ease; /* Makes the hover look smooth */
+}
+
+/* The hover effect */
+path.hover{
+    fill: #1a73e8 !important;
+}
+
+.highlight-stance {
+    fill: #f5a425 !important;
+}
+
+.state-label {
+  font-family: "Arial", sans-serif;
+  font-size: 10px;          /* Adjust based on your overall map size */
+  font-weight: bold;
+  fill: #333333;            /* Text color */
+  text-anchor: middle;      /* Horizontally centers text on the X coordinate */
+  dominant-baseline: central; /* Vertically centers text on the Y coordinate */
+  pointer-events: none;     /* Allows users to click 'through' the text onto the state */
+}
