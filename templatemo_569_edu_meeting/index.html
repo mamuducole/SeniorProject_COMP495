@@ -1,199 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>THE ROCKS, Inc.</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+
   <style>
-.site-search-box {
-  display: none;
-  position: absolute;
-  top: 100px;
-  right: 0;
-  margin-top: 8px;
+    .site-search-box {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      margin-top: 8px;
+      width: 380px;
+      background: #050505;
+      border: 1px solid #d4a017;
+      border-radius: 0 0 14px 14px;
+      padding: 14px;
+      z-index: 10000;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+      animation: dropdownFade 0.25s ease;
+    }
 
-  width: 340px;
+    .site-search-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(212,160,23,0.4);
+      border-radius: 8px;
+      background: #111;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
 
-  background: rgba(15, 15, 15, 0.98);
-  border: 1px solid rgba(212, 160, 23, 0.5);
-  border-radius: 0 0 14px 14px;
+    .site-search-box input::placeholder {
+      color: #aaa;
+    }
 
-  padding: 14px;
-  z-index: 9999;
+    .site-search-box input:focus {
+      border-color: #d4a017;
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+    }
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    #searchResults {
+      margin-top: 10px;
+      max-height: 260px;
+      overflow-y: auto;
+    }
 
-  animation: dropdownFade 0.25s ease;
-}
+    #searchResults a {
+      display: block;
+      padding: 12px;
+      border-radius: 10px;
+      background: #111 !important;
+      color: white !important;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: 0.2s ease;
+    }
 
-.site-search-box input {
-  width: 100%;
-  padding: 12px 14px;
+    #searchResults a:hover {
+      background: rgba(212,160,23,0.15) !important;
+    }
 
-  border: 1px solid rgba(212, 160, 23, 0.4);
-  border-radius: 8px;
+    .search-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+    }
 
-  background: #1a1a1a;
-  color: white;
+    .search-snippet {
+      font-size: 13px;
+      color: #bbb;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
 
-  font-size: 14px;
-  outline: none;
-}
+    .search-highlight {
+      color: #d4a017;
+      font-weight: 700;
+    }
 
-.site-search-box input::placeholder {
-  color: #aaa;
-}
+    @keyframes dropdownFade {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
 
-.site-search-box input:focus {
-  border-color: #d4a017;
-  box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
-}
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-#searchResults {
-  margin-top: 10px;
-  max-height: 220px;
-  overflow-y: auto;
-}
+    @media (max-width: 768px) {
+      .site-search-box {
+        right: 10px;
+        width: calc(100% - 20px);
+      }
+    }
 
-#searchResults a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
+    .custom-footer {
+      background: #000;
+      border-top: 3px solid #d4a017;
+      padding: 22px 20px;
+      color: white;
+      text-align: center;
+    }
 
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-  transition: 0.2s ease;
-}
+    .footer-brand h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: white;
+    }
 
-#searchResults a:hover {
-  background: rgba(212,160,23,0.15);
-  color: #d4a017;
-}
+    .footer-brand p {
+      color: #cfcfcf;
+      font-size: 14px;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
 
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
+    .footer-socials,
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .footer-socials a,
+    .footer-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-#searchResults a:hover {
-  color: #d4a017;
-}
-.search-highlight {
-  background-color: #a29981;
-  color: #111;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 700;
-}
-.custom-footer {
-  background: #000;
-  border-top: 3px solid #d4a017;
-  padding: 22px 20px;
-  color: white;
-  text-align: center;
-}
+    .footer-socials a {
+      color: #d4a017 !important;
+    }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .footer-links a {
+      color: white !important;
+    }
 
-.footer-brand h2 {
-  font-size: 22px;
-  margin-bottom: 8px;
-  color: white;
-}
+    .footer-socials a:hover,
+    .footer-links a:hover {
+      color: #c4af7c !important;
+    }
 
-.footer-brand p {
-  color: #cfcfcf;
-  font-size: 14px;
-  margin-bottom: 14px;
-  line-height: 1.5;
-}
-
-.footer-socials,
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-bottom: 12px;
-}
-
-.footer-socials a,
-.footer-links a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.footer-socials a {
-  color: #d4a017 !important;
-}
-
-.footer-links a {
-  color: white !important;
-}
-
-.footer-socials a:hover,
-.footer-links a:hover {
-  color: #c4af7c !important;
-}
-
-.footer-copy {
-  font-size: 13px;
-  color: #9f9f9f;
-  margin-top: 10px;
-}
-
-</style>
-
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <title>Education Meeting HTML5 Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
-
-TemplateMo 569 Edu Meeting
-
-https://templatemo.com/tm-569-edu-meeting
-
--->
-  </head>
+    .footer-copy {
+      font-size: 13px;
+      color: #9f9f9f;
+      margin-top: 10px;
+    }
+  </style>
+</head>
 
 <body>
 
-  <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <!--Tati changed this to say The Rocks Inc march 7-->
             <p></p>
-          </div>                                                                                                                                              
+          </div>
         </div>
+
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
@@ -202,11 +196,13 @@ https://templatemo.com/tm-569-edu-meeting
                   <i class="fa fa-facebook"></i>
                 </a>
               </li>
+
               <li>
                 <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">
                   <i class="fa fa-youtube"></i>
                 </a>
               </li>
+
               <li>
                 <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">
                   <i class="fa fa-linkedin"></i>
@@ -215,174 +211,161 @@ https://templatemo.com/tm-569-edu-meeting
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                          THE ROCKS, Inc.
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li><a href="JoinNow.html">Join Now</a></li>
-                          <li><a href="programs.html">Programs</a></li>
-                          <li><a href="Chapters.html">Find A Chapter</a></li>
-                          <li><a href="donate.html">Donate</a></li>
-                          <!-- About Us Dropdown -->
-                          <li class="has-sub">
-                            <a href="javascript:void(0)">About Us</a>
-                        
-                            <ul class="sub-menu">
-          
-                                <li><a href="About Us.html">History</a></li>
-                                <li><a href="ContactUs.html">Contact Us</a></li>
-                            </ul>
-                        </li>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
 
+          <nav class="main-nav">
 
-                          
+            <a href="index.html" class="logo">
+              THE ROCKS, Inc.
+            </a>
 
-                          <!-- <li><a href="About Us.html">About Us</a></li> -->
-                          
-                          <li><a href="">Log in</a></li>
-                          <li><a href="#" id="searchToggle">Search</a></li>
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
+            <ul class="nav">
+              <li><a href="JoinNow.html">Join Now</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="Chapters.html">Find A Chapter</a></li>
+              <li><a href="donate.html">Donate</a></li>
+
+              <li class="has-sub">
+                <a href="javascript:void(0)">About Us</a>
+                <ul class="sub-menu">
+                  <li><a href="About Us.html">History</a></li>
+                  <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+              </li>
+
+              <li><a href="">Log in</a></li>
+              <li><a href="#" id="searchToggle">Search</a></li>
+            </ul>
+
+            <a class="menu-trigger">
+              <span>Menu</span>
+            </a>
+
+          </nav>
+
+        </div>
       </div>
+    </div>
   </header>
-  <!-- ***** Header Area End ***** -->
+
   <div id="searchBox" class="site-search-box">
     <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
     <div id="searchResults"></div>
   </div>
 
-  <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
-      <video autoplay muted loop id="bg-video">
-          <source src="assets/images/ROCKYTVID1.mov" type="video/mp4" />
-      </video>
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/images/ROCKYTVID1.mov" type="video/mp4">
+    </video>
 
-      <div class="video-overlay header-text">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="caption">
+    <div class="video-overlay header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="caption">
               <h2>Shaping Talent Through Mentorship</h2>
-              <h6>BUILD STRONGER CAREERS. LEAD WITH PURPOSE. CHANGE LIVES. </h6>
+              <h6>BUILD STRONGER CAREERS. LEAD WITH PURPOSE. CHANGE LIVES.</h6>
               <p>A single supportive relationship changes the trajectory of a person's life. Mentors help build confidence, improve career outcomes, and provide problem-solving skills that emerging military and civilian leaders need.</p>
+
               <div class="main-button-red">
-                <!-- Link the Join Now Button to the Membership.html page-->
-                  <a href="mentorship.html">Join Us Now!</a>
+                <a href="mentorship.html">Join Us Now!</a>
               </div>
-          </div>
-              </div>
-            </div>
-          </div>
-      </div>
-  </section>
-  <!-- ***** Main Banner Area End ***** -->
-
- 
-
-  <!-- ***** About Us Section ***** -->
-
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="meeting-single-item">
-                
-                <div class="down-content">
-                  <a href="meeting-details.html"><h2>About Us</h2></a>
-                  <p class="description" style="font-size: 17px; line-height: 1.7;">
-                  Since the mid-70s, The ROCKS, an international 501(c)3 nonprofit organization,
-through its National Board, chapters and Interest Groups has been a source of strength
-within the military community, providing mentorship and professional leadership
-development to military officers. Our mission is based on a philosophy of mutual
-support, networking and mentorship—Strengthen military officers and civilians by
-providing and promoting mentorship, professional leadership development, scholarship
-and networking. We are an essential leader in providing developmental guidance to
-support members of the officer corps, cadets, and federal civilians. Connection,
-guidance and opportunity through our mentorship program is the foundation of all our
-work.
-
-                    <br><br>Upon reaching Washington, several informal meetings followed. However, the emphasis was modified to deal with survival in the National Capitol Region and to address other issues of interest to the members.  During the years which followed, many officers were reassigned in and out of the Washington area so the group continued to grow. The need for a more structured organization was also seen, so a formal meeting was held on October 9, 1974, to get the group formalized. BG Roscoe Cartwright, along with Colonel Robert B. Burke, led an initiative to formally organize the growing network into what became temporarily known as the "No Name Club" until they agreed on an official name. Shortly thereafter, on Dec 1, 1974, the "No Name Club" was assembled to vote on a name when it received news that General Cartwright and his wife had died in a plane crash earlier that day.  The leader of the group, General Cartwright, who embodied the spirit of nurturing, commitment and mentorship was gone.
-                 
-
-                  </p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-             
             </div>
           </div>
         </div>
       </div>
     </div>
-   
   </section>
 
-  <!-- ***** About Us Section ***** -->
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
 
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
 
- 
+                <div class="down-content">
+                  <a href="meeting-details.html">
+                    <h2>About Us</h2>
+                  </a>
+
+                  <p class="description" style="font-size: 17px; line-height: 1.7;">
+                    Since the mid-70s, The ROCKS, an international 501(c)3 nonprofit organization,
+                    through its National Board, chapters and Interest Groups has been a source of strength
+                    within the military community, providing mentorship and professional leadership
+                    development to military officers. Our mission is based on a philosophy of mutual
+                    support, networking and mentorship—Strengthen military officers and civilians by
+                    providing and promoting mentorship, professional leadership development, scholarship
+                    and networking. We are an essential leader in providing developmental guidance to
+                    support members of the officer corps, cadets, and federal civilians. Connection,
+                    guidance and opportunity through our mentorship program is the foundation of all our
+                    work.
+
+                    <br><br>
+
+                    Upon reaching Washington, several informal meetings followed. However, the emphasis was modified
+                    to deal with survival in the National Capitol Region and to address other issues of interest to
+                    the members. During the years which followed, many officers were reassigned in and out of the
+                    Washington area so the group continued to grow. The need for a more structured organization was
+                    also seen, so a formal meeting was held on October 9, 1974, to get the group formalized.
+                    BG Roscoe Cartwright, along with Colonel Robert B. Burke, led an initiative to formally organize
+                    the growing network into what became temporarily known as the "No Name Club" until they agreed on
+                    an official name. Shortly thereafter, on Dec 1, 1974, the "No Name Club" was assembled to vote
+                    on a name when it received news that General Cartwright and his wife had died in a plane crash
+                    earlier that day. The leader of the group, General Cartwright, who embodied the spirit of nurturing,
+                    commitment and mentorship was gone.
+                  </p>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-lg-12"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="our-courses" id="courses">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-12">
           <div class="section-heading">
             <h2>Shaping Futures, One Mentee at a Time</h2>
           </div>
         </div>
+
         <div class="col-lg-12">
           <div class="owl-courses-item owl-carousel">
-            <!--<div class="item">
-              <img src="assets/images/LandingPage-mentoringgraphic.jpeg" alt="Course One">
-              <div class="down-content">
-                <h4>Why Mentorship Matters</h4>
-                <p style="text-align: center;">The ROCKS connects driven individuals, military and civilian with experienced mentors, resources and opportunities that support career advancement, leadership development and long-term success.</p>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>-->
+
             <div class="item">
-              <img src="assets/images/LP-Women.jpeg" alt="Course Two">
+              <img src="assets/images/LP-Women.jpeg" alt="Mentors">
+
               <div class="down-content">
                 <h4>For Mentors: Lead the Next Generation</h4>
-                <p style="text-align: center;">Your experience is someone else’s roadmap. The ROCKS mentors are professionals, leaders, and veterans who want to give back by helping others succeed. As a mentor, you will guide professionals through real-world challenges and share insights and leadership skills and expand your own network and impact. One conversation can change a career. One mentor can change a life. Be a ROCKS mentor.</p>
+
+                <p style="text-align: center;">
+                  Your experience is someone else’s roadmap. The ROCKS mentors are professionals, leaders,
+                  and veterans who want to give back by helping others succeed. As a mentor, you will guide
+                  professionals through real-world challenges and share insights and leadership skills and expand
+                  your own network and impact. One conversation can change a career. One mentor can change a life.
+                  Be a ROCKS mentor.
+                </p>
+
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
@@ -395,17 +378,28 @@ work.
                       </ul>
                     </div>
                     <div class="col-4">
-                       <span></span>
+                      <span></span>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
+
             <div class="item">
-              <img src="assets/images/course-03.jpg" alt="">
+              <img src="assets/images/course-03.jpg" alt="Mentees">
+
               <div class="down-content">
                 <h4>For Mentees: Build Your Career with Confidence</h4>
-                 <p style="text-align: center;">You don’t have to navigate your career alone. Career growth isn’t just about what you know—it’s also about who guides you along the way. Whether you’re early in your career and seeking direction or looking to level up professionally, a mentor can help you navigate challenges, avoid setbacks and accelerate your success. At ROCKS, we create relationships that open doors and build confidence. We help you move forward with purpose and will help you. Join ROCKS.</p>
+
+                <p style="text-align: center;">
+                  You don’t have to navigate your career alone. Career growth isn’t just about what you know—it’s
+                  also about who guides you along the way. Whether you’re early in your career and seeking direction
+                  or looking to level up professionally, a mentor can help you navigate challenges, avoid setbacks
+                  and accelerate your success. At ROCKS, we create relationships that open doors and build confidence.
+                  We help you move forward with purpose and will help you. Join ROCKS.
+                </p>
+
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
@@ -418,17 +412,27 @@ work.
                       </ul>
                     </div>
                     <div class="col-4">
-                       <span></span>
+                      <span></span>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
+
             <div class="item">
-              <img src="assets/images/course-04.jpg" alt="">
+              <img src="assets/images/course-04.jpg" alt="Donors">
+
               <div class="down-content">
                 <h4>For Donors: Invest in Careers, Strengthen Communities</h4>
-                <p style="text-align: center;">Your support helps individuals build stable, sustainable futures. Every contribution allows ROCKS to provide structured mentorship programs, offer career development workshops, scholarships and expand access to professional networks. You are not just supporting a program, you are investing in economic mobility, workforce development, and communities. Give today. Empower tomorrow’s leaders.</p>
+
+                <p style="text-align: center;">
+                  Your support helps individuals build stable, sustainable futures. Every contribution allows ROCKS
+                  to provide structured mentorship programs, offer career development workshops, scholarships and
+                  expand access to professional networks. You are not just supporting a program, you are investing
+                  in economic mobility, workforce development, and communities. Give today. Empower tomorrow’s leaders.
+                </p>
+
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
@@ -441,14 +445,17 @@ work.
                       </ul>
                     </div>
                     <div class="col-4">
-                       <span></span>
+                      <span></span>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
+
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -456,50 +463,65 @@ work.
   <section class="our-facts">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-6">
           <div class="row">
+
             <div class="col-lg-12">
               <h2>Testimonials</h2>
             </div>
+
             <div class="col-lg-6">
               <div class="row">
+
                 <div class="col-12">
                   <div class="count-area-content new-students">
                     <div class="count-digit">1000</div>
                     <div class="count-title">Current Members</div>
                   </div>
                 </div>
+
                 <div class="col-12">
                   <div class="count-area-content">
                     <div class="count-digit">100+</div>
                     <div class="count-title">Officers Mentored</div>
                   </div>
                 </div>
+
               </div>
             </div>
+
             <div class="col-lg-6">
               <div class="row">
+
                 <div class="col-12">
                   <div class="count-area-content new-students">
                     <div class="count-digit">$250k</div>
                     <div class="count-title">Scholarships Awarded</div>
                   </div>
-                </div> 
+                </div>
+
                 <div class="col-12">
                   <div class="count-area-content new-students">
                     <div class="count-digit">20+</div>
                     <div class="count-title">Installations Reached</div>
                   </div>
                 </div>
+
               </div>
             </div>
-          </div>
-        </div> 
-        <div class="col-lg-6 align-self-center">
-          <div class="video">
-            <a href="https://youtu.be/whf-c6C2kE8?si=yH0NEdcJ5tNugiJA" target="_blank"><img src="assets/images/play-icon.png" alt=""></a>
+
           </div>
         </div>
+
+        <div class="col-lg-6 align-self-center">
+          <div class="video">
+            <a href="https://youtu.be/whf-c6C2kE8?si=yH0NEdcJ5tNugiJA" target="_blank">
+              <img src="assets/images/play-icon.png" alt="Play video">
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -507,44 +529,55 @@ work.
   <section class="contact-us" id="contact">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-9 align-self-center">
           <div class="row">
             <div class="col-lg-12">
+
               <form id="contact" action="" method="post">
                 <div class="row">
+
                   <div class="col-lg-12">
                     <h2>Let's get in touch</h2>
                   </div>
+
                   <div class="col-lg-4">
                     <fieldset>
                       <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
                     </fieldset>
                   </div>
+
                   <div class="col-lg-4">
                     <fieldset>
-                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
-                  </fieldset>
+                      <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                    </fieldset>
                   </div>
+
                   <div class="col-lg-4">
                     <fieldset>
                       <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
                     </fieldset>
                   </div>
+
                   <div class="col-lg-12">
                     <fieldset>
-                      <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+                      <textarea name="message" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
                     </fieldset>
                   </div>
+
                   <div class="col-lg-12">
                     <fieldset>
                       <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
                     </fieldset>
                   </div>
+
                 </div>
               </form>
+
             </div>
           </div>
         </div>
+
         <div class="col-lg-3">
           <div class="right-info">
             <ul>
@@ -552,14 +585,17 @@ work.
                 <h6>Phone Number</h6>
                 <span>301-423-5500</span>
               </li>
+
               <li>
                 <h6>Email Address</h6>
                 <span>TBA</span>
               </li>
+
               <li>
                 <h6>Official Address</h6>
-                <span>c/o The Alexis | Windham Group LLC Post Office Box 47435 Forestville,  MD  20753 United States of America</span>
+                <span>c/o The Alexis | Windham Group LLC Post Office Box 47435 Forestville, MD 20753 United States of America</span>
               </li>
+
               <li>
                 <h6>Club Contacts</h6>
                 <span>TBA Link</span>
@@ -567,110 +603,149 @@ work.
             </ul>
           </div>
         </div>
+
       </div>
     </div>
-    </section>
-    <footer class="custom-footer">
-      <div class="footer-content">
+  </section>
 
-        <div class="footer-brand">
-          <div>
-            <h2>THE ROCKS, Inc.</h2>
-            <p>
-              The ROCKS, Inc. is a tax-exempt non-profit organization under Section 501(c)(3).
-              Donations are tax deductible.
-            </p>
-          </div>
+  <footer class="custom-footer">
+    <div class="footer-content">
 
-          <div class="footer-socials">
-            <a href="https://www.facebook.com/rocksinc" target="_blank">Facebook</a>
-            <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">YouTube</a>
-            <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">LinkedIn</a>
-          </div>
+      <div class="footer-brand">
+        <div>
+          <h2>THE ROCKS, Inc.</h2>
+          <p>
+            The ROCKS, Inc. is a tax-exempt non-profit organization under Section 501(c)(3).
+            Donations are tax deductible.
+          </p>
         </div>
 
-        <div class="footer-links">
-          <a href="faq.html">FAQs</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="#">Accessibility</a>
-          <a href="About Us.html">About Us</a>
-          <a href="#">Resources</a>
-          <a href="contact.html">Contact Us</a>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/rocksinc" target="_blank">Facebook</a>
+          <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">YouTube</a>
+          <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">LinkedIn</a>
         </div>
-
-        <div class="footer-copy">
-          &copy; 2026 The ROCKS, Inc. All rights reserved.
-        </div>
-
       </div>
-    </footer>
- 
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <div class="footer-links">
+        <a href="faq.html">FAQs</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="#">Accessibility</a>
+        <a href="About Us.html">About Us</a>
+        <a href="#">Resources</a>
+        <a href="ContactUs.html">Contact Us</a>
+      </div>
 
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/slick-slider.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
-        //according to loftblog tut
-        $('.nav li:first').addClass('active');
+      <div class="footer-copy">
+        &copy; 2026 The ROCKS, Inc. All rights reserved.
+      </div>
 
-        var showSection = function showSection(section, isAnimate) {
-          var
-          direction = section.replace(/#/, ''),
-          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-          reqSectionPos = reqSection.offset().top - 0;
+    </div>
+  </footer>
 
-          if (isAnimate) {
-            $('body, html').animate({
-              scrollTop: reqSectionPos },
-            800);
-          } else {
-            $('body, html').scrollTop(reqSectionPos);
-          }
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        };
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
 
-        var checkSection = function checkSection() {
-          $('.section').each(function () {
-            var
-            $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-            if (topEdge < wScroll && bottomEdge > wScroll) {
-              var
-              currentId = $this.data('section'),
-              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-              reqLink.closest('li').addClass('active').
-              siblings().removeClass('active');
-            }
-          });
-        };
+  <script>
+    $('.nav li:first').addClass('active');
 
-        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-          e.preventDefault();
-          showSection($(this).attr('href'), true);
-        });
+    var showSection = function showSection(section, isAnimate) {
+      var direction = section.replace(/#/, ''),
+        reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+        reqSectionPos = reqSection.offset().top - 0;
 
-        $(window).scroll(function () {
-          checkSection();
-        });
-    </script>
-    <script>
+      if (isAnimate) {
+        $('body, html').animate({
+          scrollTop: reqSectionPos
+        }, 800);
+      } else {
+        $('body, html').scrollTop(reqSectionPos);
+      }
+    };
+
+    var checkSection = function checkSection() {
+      $('.section').each(function () {
+        var $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var currentId = $this.data('section'),
+            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+
+          reqLink.closest('li').addClass('active').siblings().removeClass('active');
+        }
+      });
+    };
+
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+      e.preventDefault();
+      showSection($(this).attr('href'), true);
+    });
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+  </script>
+
+  <script>
   const searchToggle = document.getElementById("searchToggle");
   const searchBox = document.getElementById("searchBox");
   const searchInput = document.getElementById("siteSearchInput");
   const searchResults = document.getElementById("searchResults");
 
-  // Open / close search box
+  const sitePages = [
+    {
+      title: "Home",
+      url: "index.html",
+      content: "Shaping Talent Through Mentorship. Build stronger careers, lead with purpose, and change lives. Mentors help build confidence, improve career outcomes, and provide problem-solving skills. The ROCKS connects mentors, mentees, donors, officers, civilians, scholarships, testimonials, and leadership development."
+    },
+    {
+      title: "Join Now",
+      url: "JoinNow.html",
+      content: "Join THE ROCKS, Inc. Become a member and connect with mentors, leaders, chapters, programs, and professional development opportunities."
+    },
+    {
+      title: "Programs",
+      url: "programs.html",
+      content: "Programs include mentorship, scholarships, leadership development, professional development, networking opportunities, career growth, and community support."
+    },
+    {
+      title: "Find A Chapter",
+      url: "Chapters.html",
+      content: "Find a chapter, connect with local groups, regional chapters, military communities, members, and leadership networks."
+    },
+    {
+      title: "Donate",
+      url: "donate.html",
+      content: "Donations support scholarships, mentorship programs, leadership development, future military leaders, operating support, leadership awards, and legacy projects."
+    },
+    {
+      title: "About Us",
+      url: "About Us.html",
+      content: "THE ROCKS, Inc. history began with the Blue Geese, the No Name Club, Roscoe Cartwright, mentorship, networking, professional leadership development, military officers, chapters, and national leadership."
+    },
+    {
+      title: "Contact Us",
+      url: "ContactUs.html",
+      content: "Contact THE ROCKS for membership, leadership questions, mentorship assistance, scholarship information, phone number, official address, and general questions."
+    },
+    {
+      title: "FAQs",
+      url: "faq.html",
+      content: "Frequently asked questions about mentorship, scholarships, donations, leadership development, volunteering, programs, and how to get involved."
+    }
+  ];
+
   searchToggle.addEventListener("click", function(e) {
     e.preventDefault();
 
@@ -682,126 +757,63 @@ work.
     }
   });
 
-  // Search entire visible website text
   searchInput.addEventListener("input", function() {
-
     const query = searchInput.value.toLowerCase().trim();
-
     searchResults.innerHTML = "";
 
     if (query === "") return;
 
-    // Search all sections + footer
-    const searchableSections = document.querySelectorAll("section, footer");
+    const matches = sitePages.filter(page =>
+      page.title.toLowerCase().includes(query) ||
+      page.content.toLowerCase().includes(query)
+    );
 
-    let foundResults = 0;
+    if (matches.length === 0) {
+      searchResults.innerHTML = `<p style="padding:10px; color:#aaa;">No results found.</p>`;
+      return;
+    }
 
-    searchableSections.forEach((section, index) => {
+    matches.forEach(page => {
+      const resultLink = document.createElement("a");
+      resultLink.href = page.url;
 
-      const sectionText = section.innerText.toLowerCase();
+      let snippet = page.content;
+      const sentences = page.content.split(".");
 
-      if (sectionText.includes(query)) {
-
-        // Add automatic ID if missing
-        if (!section.id) {
-          section.id = "search-section-" + index;
+      for (let sentence of sentences) {
+        if (sentence.toLowerCase().includes(query)) {
+          snippet = sentence.trim();
+          break;
         }
-
-        // Find heading
-        const heading = section.querySelector("h1, h2, h3, h4");
-
-        let title = "Matching Section";
-
-        if (heading) {
-          title = heading.innerText;
-        }
-
-        // Create result link
-        const resultLink = document.createElement("a");
-
-        resultLink.href = "#" + section.id;
-        resultLink.textContent = title;
-
-        // Smooth scroll
-        resultLink.addEventListener("click", function(e) {
-
-          e.preventDefault();
-
-          removeHighlights();
-
-          highlightText(section, query);
-
-          section.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-
-          searchBox.style.display = "none";
-        });
-
-        searchResults.appendChild(resultLink);
-
-        foundResults++;
       }
-    });
 
-    // No results
-    if (foundResults === 0) {
+      const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp("(" + safeQuery + ")", "gi");
 
-      searchResults.innerHTML = `
-        <p style="padding:8px 0; color:#777;">
-          No results found.
-        </p>
+      resultLink.innerHTML = `
+        <div class="search-title">${page.title}</div>
+        <div class="search-snippet">
+          ${snippet.replace(regex, '<span class="search-highlight">$1</span>')}
+        </div>
       `;
+
+      searchResults.appendChild(resultLink);
+    });
+  });
+
+  searchInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      const firstResult = searchResults.querySelector("a");
+
+      if (firstResult) {
+        window.location.href = firstResult.href;
+      }
     }
   });
 
-  // Close search when clicking outside
   document.addEventListener("click", function(e) {
-
-    if (
-      !searchBox.contains(e.target) &&
-      !searchToggle.contains(e.target)
-    ) {
+    if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
       searchBox.style.display = "none";
     }
   });
-  function removeHighlights() {
-  document.querySelectorAll(".search-highlight").forEach(function(span) {
-    span.replaceWith(document.createTextNode(span.textContent));
-  });
-}
-
-function highlightText(element, query) {
-  const walker = document.createTreeWalker(
-    element,
-    NodeFilter.SHOW_TEXT,
-    null,
-    false
-  );
-
-  const textNodes = [];
-
-  while (walker.nextNode()) {
-    textNodes.push(walker.currentNode);
-  }
-
-  textNodes.forEach(function(node) {
-    const text = node.nodeValue;
-    const lowerText = text.toLowerCase();
-    const lowerQuery = query.toLowerCase();
-
-    if (lowerText.includes(lowerQuery)) {
-      const regex = new RegExp("(" + query + ")", "gi");
-      const spanWrapper = document.createElement("span");
-
-      spanWrapper.innerHTML = text.replace(
-        regex,
-        '<span class="search-highlight">$1</span>'
-      );
-
-      node.parentNode.replaceChild(spanWrapper, node);
-    }
-  });
-}
 </script>

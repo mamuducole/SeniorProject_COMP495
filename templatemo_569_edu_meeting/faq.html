@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
 
   <style>
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -156,93 +157,212 @@
       transform: scale(1.05);
     }
 
-    
+    /* SEARCH BAR */
+
+    .site-search-box {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      margin-top: 8px;
+      width: 380px;
+      background: #050505;
+      border: 1px solid #d4a017;
+      border-radius: 0 0 14px 14px;
+      padding: 14px;
+      z-index: 10000;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+      animation: dropdownFade 0.25s ease;
+    }
+
+    .site-search-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(212,160,23,0.4);
+      border-radius: 8px;
+      background: #111;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .site-search-box input::placeholder {
+      color: #aaa;
+    }
+
+    .site-search-box input:focus {
+      border-color: #d4a017;
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+    }
+
+    #searchResults {
+      margin-top: 10px;
+      max-height: 260px;
+      overflow-y: auto;
+    }
+
+    #searchResults a {
+      display: block;
+      padding: 12px;
+      border-radius: 10px;
+      background: #111 !important;
+      color: white !important;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: 0.2s ease;
+    }
+
+    #searchResults a:hover {
+      background: rgba(212,160,23,0.15) !important;
+    }
+
+    .search-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .search-snippet {
+      font-size: 13px;
+      color: #bbb;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .search-highlight {
+      color: #d4a017;
+      font-weight: 700;
+    }
+
+    @keyframes dropdownFade {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .site-search-box {
+        right: 10px;
+        width: calc(100% - 20px);
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
-  
+
   <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <!--Tati changed this to say The Rocks Inc march 7-->
             <p></p>
-          </div>                                                                                                                                              
+          </div>
         </div>
+
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
+
               <li>
                 <a href="https://www.facebook.com/rocksinc" target="_blank">
                   <i class="fa fa-facebook"></i>
                 </a>
               </li>
+
               <li>
                 <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">
                   <i class="fa fa-youtube"></i>
                 </a>
               </li>
+
               <li>
                 <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">
                   <i class="fa fa-linkedin"></i>
                 </a>
               </li>
+
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- ***** Header Area Start ***** -->
+  <!-- HEADER -->
   <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                          THE ROCKS, Inc.
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li><a href="mentorship.html">Join Now</a></li>
-                          <li><a href="programs.html">Programs</a></li>
-                          <li><a href="Chapters.html">Find A Chapter</a></li>
-                          <li><a href="">Donate</a></li>
-                          <!-- About Us Dropdown -->
-                          <li class="has-sub">
-                            <a href="javascript:void(0)">About Us</a>
-                        
-                            <ul class="sub-menu">
-          
-                                <li><a href="About Us.html">History</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </li>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
 
+          <nav class="main-nav">
 
-                          
+            <a href="index.html" class="logo">
+              THE ROCKS, Inc.
+            </a>
 
-                          <!-- <li><a href="About Us.html">About Us</a></li> -->
-                          
-                          <li><a href="">Log in</a></li>
-                          <li><a href="">Search</a></li>
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
+            <ul class="nav">
+
+              <li><a href="mentorship.html">Join Now</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="Chapters.html">Find A Chapter</a></li>
+              <li><a href="">Donate</a></li>
+
+              <li class="has-sub">
+
+                <a href="javascript:void(0)">About Us</a>
+
+                <ul class="sub-menu">
+                  <li><a href="About Us.html">History</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+              </li>
+
+              <li><a href="">Log in</a></li>
+
+              <li>
+                <a href="#" id="searchToggle">Search</a>
+              </li>
+
+            </ul>
+
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+
+          </nav>
+
+        </div>
       </div>
+    </div>
   </header>
-  <!-- ***** Header Area End ***** -->
+
+  <!-- SEARCH BOX -->
+
+  <div id="searchBox" class="site-search-box">
+
+    <input
+      type="text"
+      id="siteSearchInput"
+      placeholder="Search THE ROCKS website..."
+    >
+
+    <div id="searchResults"></div>
+
+  </div>
 
 <section class="faq-page">
   <div class="faq-container">
@@ -276,7 +396,7 @@
 
       <details>
         <summary>How do I apply for a mentor?</summary>
-        <p>You can apply through our mentorship application form on the website. Once submitted, our team reviews applications and matches mentees based on goals, interests, and availability.</p>
+        <p>You can apply through our mentorship application form on the website.</p>
       </details>
 
       <details>
@@ -285,64 +405,10 @@
       </details>
 
       <details>
-        <summary>What kinds of topics can mentors help with?</summary>
-        <ul>
-          <li>Leadership development</li>
-          <li>Career planning</li>
-          <li>College preparation</li>
-          <li>Networking</li>
-          <li>Professional confidence</li>
-          <li>Goal setting</li>
-          <li>Work-life balance</li>
-        </ul>
-      </details>
-
-      <details>
         <summary>Can mentorship meetings be virtual?</summary>
         <p>Yes. Many mentor-mentee meetings are offered virtually to increase accessibility.</p>
       </details>
-    </div>
 
-    <div class="faq-category">
-      <h2>Volunteer & Mentor FAQs</h2>
-
-      <details>
-        <summary>How can I become a mentor?</summary>
-        <p>Potential mentors can complete the mentor interest form on our website. Applicants may go through a review or onboarding process.</p>
-      </details>
-
-      <details>
-        <summary>What qualifications do mentors need?</summary>
-        <p>We look for individuals with leadership experience, professionalism, strong communication skills, and a passion for helping others succeed.</p>
-      </details>
-    </div>
-
-    <div class="faq-category">
-      <h2>Scholarships & Programs FAQs</h2>
-
-      <details>
-        <summary>Does THE ROCKS, Inc. offer scholarships?</summary>
-        <p>Yes. Scholarship opportunities may be available to eligible students based on program criteria and funding availability.</p>
-      </details>
-
-      <details>
-        <summary>What other programs do you offer?</summary>
-        <p>We offer leadership workshops, networking events, community service initiatives, professional development sessions, and educational programming.</p>
-      </details>
-    </div>
-
-    <div class="faq-category">
-      <h2>Donations & Support FAQs</h2>
-
-      <details>
-        <summary>How can I support THE ROCKS, Inc.?</summary>
-        <p>You can support our mission through donations, volunteering, mentorship, sponsorships, or community partnerships.</p>
-      </details>
-
-      <details>
-        <summary>Where do donations go?</summary>
-        <p>Donations help fund mentorship programs, scholarships, leadership initiatives, events, and community outreach efforts.</p>
-      </details>
     </div>
 
     <div class="faq-cta">
@@ -353,6 +419,184 @@
 
   </div>
 </section>
+
+<script>
+
+const searchToggle = document.getElementById("searchToggle");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("siteSearchInput");
+const searchResults = document.getElementById("searchResults");
+
+const sitePages = [
+
+  {
+    title: "Home",
+    url: "index.html",
+    content: `
+      THE ROCKS mentorship program supports leadership development,
+      networking, scholarships, professional growth,
+      mentorship opportunities, and community outreach.
+    `
+  },
+
+  {
+    title: "Programs",
+    url: "programs.html",
+    content: `
+      Programs include mentorship, leadership workshops,
+      scholarships, networking opportunities,
+      educational programming, and professional development.
+    `
+  },
+
+  {
+    title: "Find A Chapter",
+    url: "Chapters.html",
+    content: `
+      Find local chapters, leadership communities,
+      regional groups, and networking opportunities.
+    `
+  },
+
+  {
+    title: "Donate",
+    url: "donate.html",
+    content: `
+      Donations support scholarships, leadership development,
+      mentorship initiatives, events, and outreach programs.
+    `
+  },
+
+  {
+    title: "About Us",
+    url: "About Us.html",
+    content: `
+      Learn about THE ROCKS, Inc. history,
+      leadership mission, mentorship philosophy,
+      and organizational legacy.
+    `
+  },
+
+  {
+    title: "Contact Us",
+    url: "contact.html",
+    content: `
+      Contact THE ROCKS organization regarding mentorship,
+      scholarships, networking, partnerships, and support.
+    `
+  },
+
+  {
+    title: "FAQs",
+    url: "FAQs.html",
+    content: `
+      Frequently asked questions about mentorship,
+      scholarships, leadership development,
+      donations, networking, and volunteer opportunities.
+    `
+  }
+
+];
+
+searchToggle.addEventListener("click", function(e) {
+
+  e.preventDefault();
+
+  if (searchBox.style.display === "block") {
+
+    searchBox.style.display = "none";
+
+  } else {
+
+    searchBox.style.display = "block";
+
+    searchInput.focus();
+
+  }
+
+});
+
+searchInput.addEventListener("input", function() {
+
+  const query = searchInput.value.toLowerCase().trim();
+
+  searchResults.innerHTML = "";
+
+  if (query === "") return;
+
+  const matches = sitePages.filter(page =>
+    page.title.toLowerCase().includes(query) ||
+    page.content.toLowerCase().includes(query)
+  );
+
+  if (matches.length === 0) {
+
+    searchResults.innerHTML = `
+      <p style="padding:10px; color:#aaa;">
+        No results found.
+      </p>
+    `;
+
+    return;
+
+  }
+
+  matches.forEach(page => {
+
+    const resultLink = document.createElement("a");
+
+    resultLink.href = page.url;
+
+    let snippet = page.content;
+
+    const sentences = page.content.split(".");
+
+    for (let sentence of sentences) {
+
+      if (sentence.toLowerCase().includes(query)) {
+
+        snippet = sentence.trim();
+
+        break;
+
+      }
+
+    }
+
+    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    const regex = new RegExp("(" + safeQuery + ")", "gi");
+
+    resultLink.innerHTML = `
+      <div class="search-title">
+        ${page.title}
+      </div>
+
+      <div class="search-snippet">
+        ${snippet.replace(regex, '<span class="search-highlight">$1</span>')}
+      </div>
+    `;
+
+    searchResults.appendChild(resultLink);
+
+  });
+
+});
+
+document.addEventListener("click", function(e) {
+
+  if (
+    !searchBox.contains(e.target) &&
+    !searchToggle.contains(e.target)
+  ) {
+
+    searchBox.style.display = "none";
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>

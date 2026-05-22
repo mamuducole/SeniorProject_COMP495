@@ -13,39 +13,36 @@
 
   <title>Programs | THE ROCKS, INC.</title>
 
-  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/lightbox.css">
 
   <style>
-    /* SEARCH BOX STYLES */
     .site-search-box {
       display: none;
       position: absolute;
       top: 100px;
       right: 0;
       margin-top: 8px;
-      width: 340px;
-      background: rgba(15, 15, 15, 0.98);
-      border: 1px solid rgba(212, 160, 23, 0.5);
+      width: 380px;
+      background: #050505;
+      border: 1px solid #d4a017;
       border-radius: 0 0 14px 14px;
       padding: 14px;
-      z-index: 9999;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      z-index: 10000;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.55);
       animation: dropdownFade 0.25s ease;
     }
 
     .site-search-box input {
       width: 100%;
       padding: 12px 14px;
-      border: 1px solid rgba(212, 160, 23, 0.4);
+      border: 1px solid rgba(212,160,23,0.4);
       border-radius: 8px;
-      background: #1a1a1a;
+      background: #111;
       color: white;
       font-size: 14px;
       outline: none;
@@ -62,40 +59,67 @@
 
     #searchResults {
       margin-top: 10px;
-      max-height: 220px;
+      max-height: 260px;
       overflow-y: auto;
     }
 
     #searchResults a {
       display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      background: #111 !important;
+      color: white !important;
       text-decoration: none;
-      font-weight: 500;
+      margin-bottom: 8px;
       transition: 0.2s ease;
     }
 
     #searchResults a:hover {
-      background: rgba(212,160,23,0.15);
+      background: rgba(212,160,23,0.15) !important;
+    }
+
+    .search-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .search-snippet {
+      font-size: 13px;
+      color: #bbb;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .search-highlight {
       color: #d4a017;
+      font-weight: 700;
     }
 
     @keyframes dropdownFade {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    
+    @media (max-width: 768px) {
+      .site-search-box {
+        right: 10px;
+        width: calc(100% - 20px);
+      }
+    }
   </style>
 
 </head>
 
 <body>
 
-  <!-- ⭐ NAVIGATION BAR (FULLY INCLUDED) ⭐ -->
-
-  <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
       <div class="row">
@@ -132,7 +156,6 @@
     </div>
   </div>
 
-  <!-- Header Area -->
   <header class="header-area header-sticky">
     <div class="container">
       <div class="row">
@@ -140,12 +163,10 @@
 
           <nav class="main-nav">
 
-            <!-- Logo -->
             <a href="index.html" class="logo">
               THE ROCKS, Inc.
             </a>
 
-            <!-- Menu -->
             <ul class="nav">
               <li><a href="JoinNow.html">Join Now</a></li>
               <li><a href="programs.html">Programs</a></li>
@@ -175,15 +196,11 @@
     </div>
   </header>
 
-  <!-- Search Box -->
   <div id="searchBox" class="site-search-box">
     <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
     <div id="searchResults"></div>
   </div>
 
-  <!-- ⭐ END NAVIGATION BAR ⭐ -->
-
-  <!-- Page Heading -->
   <section class="heading-page header-text programs-hero" id="top">
     <div class="container">
       <div class="row">
@@ -195,7 +212,6 @@
     </div>
   </section>
 
-  <!-- Programs Section -->
   <section class="meetings-page programs-page-section" id="programs">
 
     <div class="container">
@@ -222,7 +238,6 @@
 
       <div class="row justify-content-center">
 
-        <!-- Mentorship -->
         <div class="col-lg-5 col-md-6">
           <a href="mentorship.html" class="program-link-card">
             <div class="meeting-single-item program-card army-card">
@@ -241,7 +256,6 @@
           </a>
         </div>
 
-        <!-- Scholarship -->
         <div class="col-lg-5 col-md-6">
           <a href="scholarship.html" class="program-link-card">
             <div class="meeting-single-item program-card army-card">
@@ -262,7 +276,6 @@
 
       </div>
 
-      <!-- CTA -->
       <div class="row cta-row">
         <div class="col-lg-10 offset-lg-1">
           <div class="program-cta-box text-center">
@@ -279,14 +292,12 @@
 
   </section>
 
-  <!-- Footer -->
   <footer class="footer footer-programs">
     <div class="container">
       <p>Copyright © 2026 THE ROCKS, INC. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/isotope.min.js"></script>
@@ -296,6 +307,137 @@
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js"></script>
+
+  <script>
+    const searchToggle = document.getElementById("searchToggle");
+    const searchBox = document.getElementById("searchBox");
+    const searchInput = document.getElementById("siteSearchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    const sitePages = [
+      {
+        title: "Home",
+        url: "index.html",
+        content: "Shaping Talent Through Mentorship. The ROCKS connects mentors, mentees, donors, officers, civilians, scholarships, testimonials, and leadership development."
+      },
+      {
+        title: "Join Now",
+        url: "JoinNow.html",
+        content: "Join THE ROCKS, Inc. Become a member and connect with mentors, leaders, chapters, programs, and professional development opportunities."
+      },
+      {
+        title: "Programs",
+        url: "programs.html",
+        content: "Programs include mentorship, scholarships, leadership development, professional development, networking opportunities, career growth, and community support."
+      },
+      {
+        title: "Mentorship Program",
+        url: "mentorship.html",
+        content: "The ROCKS Mentorship Program provides structured guidance, professional development, networking opportunities, career growth, ROTC cadet support, military officer mentorship, Department of Defense civilian support, and leadership development."
+      },
+      {
+        title: "Scholarship",
+        url: "scholarship.html",
+        content: "Scholarship opportunities support academic excellence, future leadership, students, cadets, and professional growth."
+      },
+      {
+        title: "Find A Chapter",
+        url: "Chapters.html",
+        content: "Find a chapter, connect with local groups, regional chapters, military communities, members, and leadership networks."
+      },
+      {
+        title: "Donate",
+        url: "donate.html",
+        content: "Donations support scholarships, mentorship programs, leadership development, future military leaders, operating support, leadership awards, and legacy projects."
+      },
+      {
+        title: "About Us",
+        url: "About Us.html",
+        content: "THE ROCKS, Inc. history began with the Blue Geese, the No Name Club, Roscoe Cartwright, mentorship, networking, professional leadership development, military officers, chapters, and national leadership."
+      },
+      {
+        title: "Contact Us",
+        url: "ContactUs.html",
+        content: "Contact THE ROCKS for membership, leadership questions, mentorship assistance, scholarship information, phone number, official address, and general questions."
+      },
+      {
+        title: "FAQs",
+        url: "faq.html",
+        content: "Frequently asked questions about mentorship, scholarships, donations, leadership development, volunteering, programs, and how to get involved."
+      }
+    ];
+
+    searchToggle.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      if (searchBox.style.display === "block") {
+        searchBox.style.display = "none";
+      } else {
+        searchBox.style.display = "block";
+        searchInput.focus();
+      }
+    });
+
+    searchInput.addEventListener("input", function() {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = "";
+
+      if (query === "") return;
+
+      const matches = sitePages.filter(page =>
+        page.title.toLowerCase().includes(query) ||
+        page.content.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = `<p style="padding:10px; color:#aaa;">No results found.</p>`;
+        return;
+      }
+
+      matches.forEach(page => {
+        const resultLink = document.createElement("a");
+        resultLink.href = page.url;
+
+        let snippet = page.content;
+        const sentences = page.content.split(".");
+
+        for (let sentence of sentences) {
+          if (sentence.toLowerCase().includes(query)) {
+            snippet = sentence.trim();
+            break;
+          }
+        }
+
+        const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const regex = new RegExp("(" + safeQuery + ")", "gi");
+
+        resultLink.innerHTML = `
+          <div class="search-title">${page.title}</div>
+          <div class="search-snippet">
+            ${snippet.replace(regex, '<span class="search-highlight">$1</span>')}
+          </div>
+        `;
+
+        searchResults.appendChild(resultLink);
+      });
+    });
+
+    searchInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        const firstResult = searchResults.querySelector("a");
+
+        if (firstResult) {
+          window.location.href = firstResult.href;
+        }
+      }
+    });
+
+    document.addEventListener("click", function(e) {
+      if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
+        searchBox.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 </html>

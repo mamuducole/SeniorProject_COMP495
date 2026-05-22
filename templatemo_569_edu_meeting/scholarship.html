@@ -16,6 +16,103 @@
     <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+  
+
+    <style>
+      .site-search-box {
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        margin-top: 8px;
+        width: 380px;
+        background: #050505;
+        border: 1px solid #d4a017;
+        border-radius: 0 0 14px 14px;
+        padding: 14px;
+        z-index: 10000;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+        animation: dropdownFade 0.25s ease;
+      }
+
+      .site-search-box input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid rgba(212,160,23,0.4);
+        border-radius: 8px;
+        background: #111;
+        color: white;
+        font-size: 14px;
+        outline: none;
+      }
+
+      .site-search-box input::placeholder {
+        color: #aaa;
+      }
+
+      .site-search-box input:focus {
+        border-color: #d4a017;
+        box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+      }
+
+      #searchResults {
+        margin-top: 10px;
+        max-height: 260px;
+        overflow-y: auto;
+      }
+
+      #searchResults a {
+        display: block;
+        padding: 12px;
+        border-radius: 10px;
+        background: #111 !important;
+        color: white !important;
+        text-decoration: none;
+        margin-bottom: 8px;
+        transition: 0.2s ease;
+      }
+
+      #searchResults a:hover {
+        background: rgba(212,160,23,0.15) !important;
+      }
+
+      .search-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: white;
+      }
+
+      .search-snippet {
+        font-size: 13px;
+        color: #bbb;
+        margin-top: 4px;
+        line-height: 1.5;
+      }
+
+      .search-highlight {
+        color: #d4a017;
+        font-weight: 700;
+      }
+
+      @keyframes dropdownFade {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .site-search-box {
+          right: 10px;
+          width: calc(100% - 20px);
+        }
+      }
+    </style>
   </head>
 
 <body>
@@ -81,6 +178,11 @@
       </div>
     </div>
   </header>
+
+  <div id="searchBox" class="site-search-box">
+    <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
+    <div id="searchResults"></div>
+  </div>
 
   <section class="heading-page header-text scholarship-hero" id="top">
     <div class="container">
@@ -336,6 +438,138 @@
   <script src="assets/js/video.js"></script>
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js"></script>
+
+
+  <script>
+    const searchToggle = document.getElementById("searchToggle");
+    const searchBox = document.getElementById("searchBox");
+    const searchInput = document.getElementById("siteSearchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    const sitePages = [
+      {
+        title: "Home",
+        url: "index.html",
+        content: "Shaping Talent Through Mentorship. The ROCKS connects mentors, mentees, donors, officers, civilians, scholarships, testimonials, and leadership development."
+      },
+      {
+        title: "Join Now",
+        url: "JoinNow.html",
+        content: "Join THE ROCKS, Inc. Become a member and connect with mentors, leaders, chapters, programs, and professional development opportunities."
+      },
+      {
+        title: "Programs",
+        url: "programs.html",
+        content: "Programs include mentorship, scholarships, leadership development, professional development, networking opportunities, academic excellence, and career growth."
+      },
+      {
+        title: "Mentorship Program",
+        url: "mentorship.html",
+        content: "The ROCKS Mentorship Program provides structured guidance, professional development, ROTC cadet support, military officer mentorship, networking opportunities, and leadership development."
+      },
+      {
+        title: "Scholarship Program",
+        url: "scholarship.html",
+        content: "THE ROCKS Scholarship Program recognizes academic excellence, leadership potential, service, scholarship opportunities, ROTC students, university students, future leaders, Cartwright Scholarship, Honor Scholarship, ASBC Foundation Scholarships, and scholarship recipients."
+      },
+      {
+        title: "Find A Chapter",
+        url: "Chapters.html",
+        content: "Find local chapters, regional leadership groups, military communities, and networking opportunities."
+      },
+      {
+        title: "Donate",
+        url: "donate.html",
+        content: "Donations support scholarships, mentorship programs, leadership development, future military leaders, operating support, leadership awards, and legacy projects."
+      },
+      {
+        title: "About Us",
+        url: "About Us.html",
+        content: "THE ROCKS, Inc. history began with the Blue Geese, mentorship, networking, leadership development, and strengthening the officer corps."
+      },
+      {
+        title: "Contact Us",
+        url: "ContactUs.html",
+        content: "Contact THE ROCKS organization regarding mentorship, scholarships, networking, leadership questions, phone number, address, and support."
+      },
+      {
+        title: "FAQs",
+        url: "faq.html",
+        content: "Frequently asked questions about mentorship, scholarships, donations, leadership development, volunteering, programs, and how to get involved."
+      }
+    ];
+
+    searchToggle.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      if (searchBox.style.display === "block") {
+        searchBox.style.display = "none";
+      } else {
+        searchBox.style.display = "block";
+        searchInput.focus();
+      }
+    });
+
+    searchInput.addEventListener("input", function() {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = "";
+
+      if (query === "") return;
+
+      const matches = sitePages.filter(page =>
+        page.title.toLowerCase().includes(query) ||
+        page.content.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = `<p style="padding:10px; color:#aaa;">No results found.</p>`;
+        return;
+      }
+
+      matches.forEach(page => {
+        const resultLink = document.createElement("a");
+        resultLink.href = page.url;
+
+        let snippet = page.content;
+        const sentences = page.content.split(".");
+
+        for (let sentence of sentences) {
+          if (sentence.toLowerCase().includes(query)) {
+            snippet = sentence.trim();
+            break;
+          }
+        }
+
+        const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const regex = new RegExp("(" + safeQuery + ")", "gi");
+
+        resultLink.innerHTML = `
+          <div class="search-title">${page.title}</div>
+          <div class="search-snippet">
+            ${snippet.replace(regex, '<span class="search-highlight">$1</span>')}
+          </div>
+        `;
+
+        searchResults.appendChild(resultLink);
+      });
+    });
+
+    searchInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        const firstResult = searchResults.querySelector("a");
+
+        if (firstResult) {
+          window.location.href = firstResult.href;
+        }
+      }
+    });
+
+    document.addEventListener("click", function(e) {
+      if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
+        searchBox.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 </html>

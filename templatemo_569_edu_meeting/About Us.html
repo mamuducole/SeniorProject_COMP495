@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="utf-8">
@@ -22,30 +23,38 @@
   <link rel="stylesheet" href="assets/css/lightbox.css">
 
   <style>
-    /* SEARCH BOX STYLES */
+
     .site-search-box {
       display: none;
       position: absolute;
       top: 100px;
       right: 0;
       margin-top: 8px;
-      width: 340px;
-      background: rgba(15, 15, 15, 0.98);
-      border: 1px solid rgba(212, 160, 23, 0.5);
+
+      width: 380px;
+
+      background: #050505;
+      border: 1px solid #d4a017;
       border-radius: 0 0 14px 14px;
+
       padding: 14px;
       z-index: 9999;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+
+      box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+
       animation: dropdownFade 0.25s ease;
     }
 
     .site-search-box input {
       width: 100%;
       padding: 12px 14px;
+
       border: 1px solid rgba(212, 160, 23, 0.4);
       border-radius: 8px;
-      background: #1a1a1a;
+
+      background: #111;
       color: white;
+
       font-size: 14px;
       outline: none;
     }
@@ -61,36 +70,67 @@
 
     #searchResults {
       margin-top: 10px;
-      max-height: 220px;
+      max-height: 260px;
       overflow-y: auto;
     }
 
     #searchResults a {
       display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: white;
+      padding: 12px;
+
+      border-radius: 10px;
+
+      background: #111 !important;
+
+      color: white !important;
       text-decoration: none;
-      font-weight: 500;
+
+      margin-bottom: 8px;
+
       transition: 0.2s ease;
     }
 
     #searchResults a:hover {
-      background: rgba(212,160,23,0.15);
+      background: rgba(212,160,23,0.15) !important;
+    }
+
+    .search-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .search-snippet {
+      font-size: 13px;
+      color: #bbb;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .search-highlight {
       color: #d4a017;
+      font-weight: 700;
     }
 
     @keyframes dropdownFade {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
   </style>
 
 </head>
 
 <body>
 
-  <!-- ⭐ SUB HEADER ⭐ -->
+  <!-- SUB HEADER -->
   <div class="sub-header">
     <div class="container">
       <div class="row">
@@ -104,21 +144,25 @@
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
+
               <li>
                 <a href="https://www.facebook.com/rocksinc" target="_blank">
                   <i class="fa fa-facebook"></i>
                 </a>
               </li>
+
               <li>
                 <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">
                   <i class="fa fa-youtube"></i>
                 </a>
               </li>
+
               <li>
                 <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">
                   <i class="fa fa-linkedin"></i>
                 </a>
               </li>
+
             </ul>
           </div>
         </div>
@@ -127,7 +171,7 @@
     </div>
   </div>
 
-  <!-- ⭐ MAIN NAVIGATION ⭐ -->
+  <!-- HEADER -->
   <header class="header-area header-sticky">
     <div class="container">
       <div class="row">
@@ -135,28 +179,39 @@
 
           <nav class="main-nav">
 
-            <!-- Logo -->
+            <!-- LOGO -->
             <a href="index.html" class="logo">
               THE ROCKS, Inc.
             </a>
 
-            <!-- Menu -->
+            <!-- MENU -->
             <ul class="nav">
+
               <li><a href="JoinNow.html">Join Now</a></li>
+
               <li><a href="programs.html">Programs</a></li>
+
               <li><a href="Chapters.html">Find A Chapter</a></li>
+
               <li><a href="donate.html">Donate</a></li>
 
               <li class="has-sub">
+
                 <a href="javascript:void(0)">About Us</a>
+
                 <ul class="sub-menu">
                   <li><a href="About Us.html" class="active">History</a></li>
                   <li><a href="ContactUs.html">Contact Us</a></li>
                 </ul>
+
               </li>
 
               <li><a href="">Log in</a></li>
-              <li><a href="#" id="searchToggle">Search</a></li>
+
+              <li>
+                <a href="#" id="searchToggle">Search</a>
+              </li>
+
             </ul>
 
             <a class="menu-trigger">
@@ -170,40 +225,60 @@
     </div>
   </header>
 
-  <!-- ⭐ SEARCH BOX ⭐ -->
+  <!-- SEARCH BOX -->
   <div id="searchBox" class="site-search-box">
-    <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
+
+    <input
+      type="text"
+      id="siteSearchInput"
+      placeholder="Search The ROCKS website..."
+    >
+
     <div id="searchResults"></div>
+
   </div>
 
-  <!-- ⭐ ABOUT US CONTENT ⭐ -->
+  <!-- ABOUT US CONTENT -->
   <section class="meetings-page" id="meetings">
+
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
 
           <div class="meeting-single-item">
+
             <div class="down-content">
-              <a href="About Us.html"><h2>About Us</h2></a>
+
+              <a href="About Us.html">
+                <h2>About Us</h2>
+              </a>
 
               <p class="description">
+
                 Since the mid-70s, The ROCKS, an international 501(c)3 nonprofit organization,
                 through its National Board, chapters and Interest Groups has been a source of strength
                 within the military community, providing mentorship and professional leadership
-                development to military officers...
+                development to military officers.
+
                 <br><br>
-                Upon reaching Washington, several informal meetings followed...
+
+                Upon reaching Washington, several informal meetings followed.
+                However, the emphasis was modified to deal with survival in the National Capitol Region
+                and to address other issues of interest to the members.
+
               </p>
 
             </div>
+
           </div>
 
         </div>
       </div>
     </div>
+
   </section>
 
-  <!-- ⭐ HISTORY TIMELINE ⭐ -->
+  <!-- HISTORY TIMELINE -->
   <section class="meetings-page" id="Meetings">
 
     <div class="timeline-container">
@@ -251,6 +326,196 @@
     </div>
 
   </section>
+
+  <!-- SEARCH SCRIPT -->
+  <script>
+
+    const searchToggle = document.getElementById("searchToggle");
+    const searchBox = document.getElementById("searchBox");
+    const searchInput = document.getElementById("siteSearchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    const sitePages = [
+
+      {
+        title: "Home",
+        url: "index.html",
+        content: `
+          Shaping Talent Through Mentorship.
+          The ROCKS mentorship program helps military officers
+          and civilians build leadership skills and professional development.
+        `
+      },
+
+      {
+        title: "Programs",
+        url: "programs.html",
+        content: `
+          Mentorship, scholarships, leadership development,
+          networking opportunities, and professional growth programs.
+        `
+      },
+
+      {
+        title: "Find A Chapter",
+        url: "Chapters.html",
+        content: `
+          Find local chapters, regional groups,
+          military communities, and networking opportunities.
+        `
+      },
+
+      {
+        title: "Donate",
+        url: "donate.html",
+        content: `
+          Donations support scholarships, mentorship programs,
+          leadership development, and future military leaders.
+        `
+      },
+
+      {
+        title: "About Us",
+        url: "About Us.html",
+        content: `
+          THE ROCKS, Inc. history began with the Blue Geese,
+          mentorship, networking, military officers,
+          Roscoe Cartwright, and leadership development.
+        `
+      },
+
+      {
+        title: "Contact Us",
+        url: "ContactUs.html",
+        content: `
+          Contact THE ROCKS organization for membership,
+          leadership questions, mentorship assistance,
+          scholarship information, and networking opportunities.
+        `
+      }
+
+    ];
+
+    searchToggle.addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+      if (searchBox.style.display === "block") {
+
+        searchBox.style.display = "none";
+
+      } else {
+
+        searchBox.style.display = "block";
+
+        searchInput.focus();
+
+      }
+
+    });
+
+    searchInput.addEventListener("input", function() {
+
+      const query = searchInput.value.toLowerCase().trim();
+
+      searchResults.innerHTML = "";
+
+      if (query === "") return;
+
+      const matches = sitePages.filter(page =>
+        page.title.toLowerCase().includes(query) ||
+        page.content.toLowerCase().includes(query)
+      );
+
+      if (matches.length === 0) {
+
+        searchResults.innerHTML = `
+          <p style="padding:10px; color:#aaa;">
+            No results found.
+          </p>
+        `;
+
+        return;
+
+      }
+
+      matches.forEach(page => {
+
+        const resultLink = document.createElement("a");
+
+        resultLink.href = page.url;
+
+        let snippet = page.content.trim();
+
+        const sentences = page.content.split(".");
+
+        for (let sentence of sentences) {
+
+          if (sentence.toLowerCase().includes(query)) {
+
+            snippet = sentence.trim();
+
+            break;
+
+          }
+
+        }
+
+        const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+        const regex = new RegExp("(" + safeQuery + ")", "gi");
+
+        const highlightedSnippet = snippet.replace(
+          regex,
+          '<span class="search-highlight">$1</span>'
+        );
+
+        resultLink.innerHTML = `
+          <div class="search-title">
+            ${page.title}
+          </div>
+
+          <div class="search-snippet">
+            ${highlightedSnippet}
+          </div>
+        `;
+
+        searchResults.appendChild(resultLink);
+
+      });
+
+    });
+
+    searchInput.addEventListener("keydown", function(e) {
+
+      if (e.key === "Enter") {
+
+        const firstResult = searchResults.querySelector("a");
+
+        if (firstResult) {
+
+          window.location.href = firstResult.href;
+
+        }
+
+      }
+
+    });
+
+    document.addEventListener("click", function(e) {
+
+      if (
+        !searchBox.contains(e.target) &&
+        !searchToggle.contains(e.target)
+      ) {
+
+        searchBox.style.display = "none";
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>

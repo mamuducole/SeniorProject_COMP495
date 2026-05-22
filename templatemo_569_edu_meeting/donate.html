@@ -33,6 +33,97 @@ body {
   z-index: 9999;
 }
 
+/* SEARCH BOX */
+
+.site-search-box {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  margin-top: 8px;
+  width: 380px;
+  background: #050505;
+  border: 1px solid #d4a017;
+  border-radius: 0 0 14px 14px;
+  padding: 14px;
+  z-index: 10000;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+  animation: dropdownFade 0.25s ease;
+}
+
+.site-search-box input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(212,160,23,0.4);
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.site-search-box input::placeholder {
+  color: #aaa;
+}
+
+.site-search-box input:focus {
+  border-color: #d4a017;
+  box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+}
+
+#searchResults {
+  margin-top: 10px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+#searchResults a {
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  background: #111 !important;
+  color: white !important;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.2s ease;
+}
+
+#searchResults a:hover {
+  background: rgba(212,160,23,0.15) !important;
+}
+
+.search-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
+
+.search-snippet {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.search-highlight {
+  color: #d4a017;
+  font-weight: 700;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DONATE PAGE */
+
 .donate-page {
   overflow-x: hidden;
 }
@@ -177,8 +268,6 @@ body {
 .legacy-img {
   background-image: url("assets/images/LibraryMentorship.jpg");
 }
-
-/* FUNDS CLEAN LIST */
 
 .donation-funds-heading {
   text-align: left;
@@ -344,85 +433,16 @@ body {
   .donation-funds-heading h2 {
     font-size: 36px;
   }
+
+  .site-search-box {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
 }
 </style>
 </head>
 
 <body>
-  
-  
-
-  <style>
-    /* SEARCH BOX STYLES */
-    .site-search-box {
-      display: none;
-      position: absolute;
-      top: 100px;
-      right: 0;
-      margin-top: 8px;
-      width: 340px;
-      background: rgba(15, 15, 15, 0.98);
-      border: 1px solid rgba(212, 160, 23, 0.5);
-      border-radius: 0 0 14px 14px;
-      padding: 14px;
-      z-index: 9999;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      animation: dropdownFade 0.25s ease;
-    }
-
-    .site-search-box input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid rgba(212, 160, 23, 0.4);
-      border-radius: 8px;
-      background: #1a1a1a;
-      color: white;
-      font-size: 14px;
-      outline: none;
-    }
-
-    .site-search-box input::placeholder {
-      color: #aaa;
-    }
-
-    .site-search-box input:focus {
-      border-color: #d4a017;
-      box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
-    }
-
-    #searchResults {
-      margin-top: 10px;
-      max-height: 220px;
-      overflow-y: auto;
-    }
-
-    #searchResults a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.2s ease;
-    }
-
-    #searchResults a:hover {
-      background: rgba(212,160,23,0.15);
-      color: #d4a017;
-    }
-
-    @keyframes dropdownFade {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    
-  </style>
-
-</head>
-
-<body>
-  <!-- ⭐ NAVIGATION BAR ⭐ -->
 
 <div class="sub-header">
   <div class="container">
@@ -506,10 +526,6 @@ body {
   <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
   <div id="searchResults"></div>
 </div>
-
-<!-- ⭐ END NAVIGATION BAR ⭐ -->
-
-
 
 <div class="donate-page">
 
@@ -617,7 +633,6 @@ body {
           <a href="https://www.rocksinc.org/content.aspx?page_id=305&club_id=459944&item_id=1693">Donate</a>
         </div>
 
-
       </div>
     </div>
   </section>
@@ -713,6 +728,120 @@ body {
 <script src="assets/js/video.js"></script>
 <script src="assets/js/slick-slider.js"></script>
 <script src="assets/js/custom.js"></script>
+
+<script>
+const searchToggle = document.getElementById("searchToggle");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("siteSearchInput");
+const searchResults = document.getElementById("searchResults");
+
+const sitePages = [
+  {
+    title: "Home",
+    url: "index.html",
+    content: "Shaping Talent Through Mentorship. The ROCKS connects mentors, mentees, donors, officers, civilians, scholarships, testimonials, and leadership development."
+  },
+  {
+    title: "Join Now",
+    url: "JoinNow.html",
+    content: "Join THE ROCKS, Inc. Become a member and connect with mentors, leaders, chapters, programs, and professional development opportunities."
+  },
+  {
+    title: "Programs",
+    url: "programs.html",
+    content: "Programs include mentorship, scholarships, leadership development, professional development, networking opportunities, and career growth."
+  },
+  {
+    title: "Find A Chapter",
+    url: "Chapters.html",
+    content: "Find a chapter, connect with local groups, regional chapters, military communities, and leadership networks."
+  },
+  {
+    title: "Donate",
+    url: "donate.html",
+    content: "Donations support scholarships, mentorship programs, leadership development, future military leaders, operating support, leadership awards, and legacy projects."
+  },
+  {
+    title: "About Us",
+    url: "About Us.html",
+    content: "THE ROCKS, Inc. history began with the Blue Geese, the No Name Club, Roscoe Cartwright, mentorship, networking, and leadership development."
+  },
+  {
+    title: "Contact Us",
+    url: "ContactUs.html",
+    content: "Contact THE ROCKS for membership, leadership questions, mentorship assistance, scholarship information, phone number, address, and general questions."
+  }
+];
+
+searchToggle.addEventListener("click", function(e) {
+  e.preventDefault();
+
+  if (searchBox.style.display === "block") {
+    searchBox.style.display = "none";
+  } else {
+    searchBox.style.display = "block";
+    searchInput.focus();
+  }
+});
+
+searchInput.addEventListener("input", function() {
+  const query = searchInput.value.toLowerCase().trim();
+  searchResults.innerHTML = "";
+
+  if (query === "") return;
+
+  const matches = sitePages.filter(page =>
+    page.title.toLowerCase().includes(query) ||
+    page.content.toLowerCase().includes(query)
+  );
+
+  if (matches.length === 0) {
+    searchResults.innerHTML = `<p style="padding:10px; color:#aaa;">No results found.</p>`;
+    return;
+  }
+
+  matches.forEach(page => {
+    const resultLink = document.createElement("a");
+    resultLink.href = page.url;
+
+    let snippet = page.content;
+    const sentences = page.content.split(".");
+
+    for (let sentence of sentences) {
+      if (sentence.toLowerCase().includes(query)) {
+        snippet = sentence.trim();
+        break;
+      }
+    }
+
+    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp("(" + safeQuery + ")", "gi");
+
+    resultLink.innerHTML = `
+      <div class="search-title">${page.title}</div>
+      <div class="search-snippet">${snippet.replace(regex, '<span class="search-highlight">$1</span>')}</div>
+    `;
+
+    searchResults.appendChild(resultLink);
+  });
+});
+
+searchInput.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    const firstResult = searchResults.querySelector("a");
+
+    if (firstResult) {
+      window.location.href = firstResult.href;
+    }
+  }
+});
+
+document.addEventListener("click", function(e) {
+  if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
+    searchBox.style.display = "none";
+  }
+});
+</script>
 
 </body>
 </html>
