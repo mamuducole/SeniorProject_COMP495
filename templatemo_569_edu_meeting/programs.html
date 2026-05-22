@@ -1,37 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<head>
 
-    <title>Programs | THE ROCKS, INC.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-  </head>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Programs | THE ROCKS, INC.</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+
+  <style>
+    /* SEARCH BOX STYLES */
+    .site-search-box {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      margin-top: 8px;
+      width: 340px;
+      background: rgba(15, 15, 15, 0.98);
+      border: 1px solid rgba(212, 160, 23, 0.5);
+      border-radius: 0 0 14px 14px;
+      padding: 14px;
+      z-index: 9999;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      animation: dropdownFade 0.25s ease;
+    }
+
+    .site-search-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(212, 160, 23, 0.4);
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .site-search-box input::placeholder {
+      color: #aaa;
+    }
+
+    .site-search-box input:focus {
+      border-color: #d4a017;
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+    }
+
+    #searchResults {
+      margin-top: 10px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    #searchResults a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    #searchResults a:hover {
+      background: rgba(212,160,23,0.15);
+      color: #d4a017;
+    }
+
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    
+  </style>
+
+</head>
 
 <body>
 
-   <!-- Sub Header -->
-   <div class="sub-header">
+  <!-- ⭐ NAVIGATION BAR (FULLY INCLUDED) ⭐ -->
+
+  <!-- Sub Header -->
+  <div class="sub-header">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <!--Tati changed this to say The Rocks Inc march 7-->
             <p></p>
-          </div>                                                                                                                                              
+          </div>
         </div>
+
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
@@ -53,36 +127,61 @@
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- Header Area Start -->
+  <!-- Header Area -->
   <header class="header-area header-sticky">
     <div class="container">
       <div class="row">
         <div class="col-12">
+
           <nav class="main-nav">
+
+            <!-- Logo -->
             <a href="index.html" class="logo">
-              THE ROCKS, INC.
+              THE ROCKS, Inc.
             </a>
+
+            <!-- Menu -->
             <ul class="nav">
-                          <li><a href="mentorship.html">Join Now</a></li>
-                          <li><a href="programs.html">Programs</a></li>
-                          <li><a href="Chapters.html">Find A Chapter</a></li>
-                          <li><a href="">Donate</a></li>
-                          <li><a href="About Us.html">About Us</a></li>
-                          <li><a href="">Log in</a></li>
-                          <li><a href="">Search</a></li>
-                      </ul>     
+              <li><a href="JoinNow.html">Join Now</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="Chapters.html">Find A Chapter</a></li>
+              <li><a href="donate.html">Donate</a></li>
+
+              <li class="has-sub">
+                <a href="javascript:void(0)">About Us</a>
+                <ul class="sub-menu">
+                  <li><a href="About Us.html">History</a></li>
+                  <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+              </li>
+
+              <li><a href="">Log in</a></li>
+              <li><a href="#" id="searchToggle">Search</a></li>
+            </ul>
+
             <a class="menu-trigger">
               <span>Menu</span>
             </a>
+
           </nav>
+
         </div>
       </div>
     </div>
   </header>
+
+  <!-- Search Box -->
+  <div id="searchBox" class="site-search-box">
+    <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
+    <div id="searchResults"></div>
+  </div>
+
+  <!-- ⭐ END NAVIGATION BAR ⭐ -->
 
   <!-- Page Heading -->
   <section class="heading-page header-text programs-hero" id="top">
@@ -98,6 +197,7 @@
 
   <!-- Programs Section -->
   <section class="meetings-page programs-page-section" id="programs">
+
     <div class="container">
 
       <div class="row">
@@ -112,10 +212,9 @@
         <div class="col-lg-10 offset-lg-1">
           <div class="program-intro-box text-center">
             <p>
-              THE ROCKS, INC. invests in the future through programs that strengthen leadership,
-              expand opportunity, and reinforce a lasting commitment to service. Explore our
-              Mentorship and Scholarship initiatives to learn how we support growth, excellence,
-              and community impact.
+              THE ROCKS, INC. invests in the future through programs that
+              strengthen leadership, expand opportunity, and reinforce a
+              lasting commitment to service.
             </p>
           </div>
         </div>
@@ -123,21 +222,17 @@
 
       <div class="row justify-content-center">
 
+        <!-- Mentorship -->
         <div class="col-lg-5 col-md-6">
           <a href="mentorship.html" class="program-link-card">
             <div class="meeting-single-item program-card army-card">
               <div class="thumb">
-                <div class="price">
-                  <span>01</span>
-                </div>
+                <div class="price"><span>01</span></div>
                 <img src="assets/images/mentorship.jpg" alt="Mentorship Program">
               </div>
               <div class="down-content">
                 <h4>Mentorship</h4>
-                <p>
-                  Build leaders through guidance, professional development, shared experience,
-                  and meaningful connections that support long-term success.
-                </p>
+                <p>Build leaders through guidance, development, and meaningful connections.</p>
                 <div class="program-card-link">
                   Learn More <i class="fa fa-arrow-right"></i>
                 </div>
@@ -146,21 +241,17 @@
           </a>
         </div>
 
+        <!-- Scholarship -->
         <div class="col-lg-5 col-md-6">
           <a href="scholarship.html" class="program-link-card">
             <div class="meeting-single-item program-card army-card">
               <div class="thumb">
-                <div class="price">
-                  <span>02</span>
-                </div>
+                <div class="price"><span>02</span></div>
                 <img src="assets/images/programs2.jpg" alt="Scholarship Program">
               </div>
               <div class="down-content">
                 <h4>Scholarship</h4>
-                <p>
-                  Advance academic excellence and future leadership by supporting students with
-                  resources, recognition, and opportunity.
-                </p>
+                <p>Advance academic excellence and future leadership through support and opportunity.</p>
                 <div class="program-card-link">
                   Learn More <i class="fa fa-arrow-right"></i>
                 </div>
@@ -171,14 +262,12 @@
 
       </div>
 
+      <!-- CTA -->
       <div class="row cta-row">
         <div class="col-lg-10 offset-lg-1">
           <div class="program-cta-box text-center">
             <h3>Lead With Purpose</h3>
-            <p>
-              Learn more about the initiatives that help develop leaders, strengthen communities,
-              and create lasting impact.
-            </p>
+            <p>Learn more about the initiatives that help develop leaders and strengthen communities.</p>
             <div class="main-button-red">
               <a href="index.html">Return Home</a>
             </div>
@@ -187,6 +276,7 @@
       </div>
 
     </div>
+
   </section>
 
   <!-- Footer -->

@@ -1,43 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>About US | THE ROCKS, INC</title>
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
+  <title>About Us | THE ROCKS, INC.</title>
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
-    TemplateMo 569 Edu Meeting
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-https://templatemo.com/tm-569-edu-meeting
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
 
--->
+  <style>
+    /* SEARCH BOX STYLES */
+    .site-search-box {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      margin-top: 8px;
+      width: 340px;
+      background: rgba(15, 15, 15, 0.98);
+      border: 1px solid rgba(212, 160, 23, 0.5);
+      border-radius: 0 0 14px 14px;
+      padding: 14px;
+      z-index: 9999;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      animation: dropdownFade 0.25s ease;
+    }
+
+    .site-search-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(212, 160, 23, 0.4);
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .site-search-box input::placeholder {
+      color: #aaa;
+    }
+
+    .site-search-box input:focus {
+      border-color: #d4a017;
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+    }
+
+    #searchResults {
+      margin-top: 10px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    #searchResults a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    #searchResults a:hover {
+      background: rgba(212,160,23,0.15);
+      color: #d4a017;
+    }
+
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 
 </head>
 
 <body>
-    <!-- Sub Header -->
+
+  <!-- ⭐ SUB HEADER ⭐ -->
   <div class="sub-header">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <!--Tati changed this to say The Rocks Inc march 7-->
             <p></p>
-          </div>                                                                                                                                              
+          </div>
         </div>
 
         <div class="col-lg-4 col-sm-4">
@@ -61,139 +122,135 @@ https://templatemo.com/tm-569-edu-meeting
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- ***** Header Area Start ***** -->
+  <!-- ⭐ MAIN NAVIGATION ⭐ -->
   <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                          THE ROCKS, Inc.
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li><a href="mentorship.html">Join Now</a></li>
-                          <li><a href="programs.html">Programs</a></li>
-                          <li><a href="Chapters.html">Find A Chapter</a></li>
-                          <li><a href="">Donate</a></li>
-                          <li><a href="About Us.html">About Us</a></li>
-                          <li><a href="">Log in</a></li>
-                          <li><a href="">Search</a></li>
-                      </ul>             
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                  </nav>
-              </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <nav class="main-nav">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+              THE ROCKS, Inc.
+            </a>
+
+            <!-- Menu -->
+            <ul class="nav">
+              <li><a href="JoinNow.html">Join Now</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="Chapters.html">Find A Chapter</a></li>
+              <li><a href="donate.html">Donate</a></li>
+
+              <li class="has-sub">
+                <a href="javascript:void(0)">About Us</a>
+                <ul class="sub-menu">
+                  <li><a href="About Us.html" class="active">History</a></li>
+                  <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+              </li>
+
+              <li><a href="">Log in</a></li>
+              <li><a href="#" id="searchToggle">Search</a></li>
+            </ul>
+
+            <a class="menu-trigger">
+              <span>Menu</span>
+            </a>
+
+          </nav>
+
+        </div>
       </div>
+    </div>
   </header>
-  <!-- **** Header Area End **** -->
 
-  <!-- ***** About Us Section ***** -->
+  <!-- ⭐ SEARCH BOX ⭐ -->
+  <div id="searchBox" class="site-search-box">
+    <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
+    <div id="searchResults"></div>
+  </div>
 
+  <!-- ⭐ ABOUT US CONTENT ⭐ -->
   <section class="meetings-page" id="meetings">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="meeting-single-item">
-                
-                <div class="down-content">
-                  <a href="About Us.html"><h2>About Us</h2></a>
-                  <p class="description">
-                  Since the mid-70s, The ROCKS, an international 501(c)3 nonprofit organization,
-through its National Board, chapters and Interest Groups has been a source of strength
-within the military community, providing mentorship and professional leadership
-development to military officers. Our mission is based on a philosophy of mutual
-support, networking and mentorship—Strengthen military officers and civilians by
-providing and promoting mentorship, professional leadership development, scholarship
-and networking. We are an essential leader in providing developmental guidance to
-support members of the officer corps, cadets, and federal civilians. Connection,
-guidance and opportunity through our mentorship program is the foundation of all our
-work.
 
-                    <br><br>Upon reaching Washington, several informal meetings followed. However, the emphasis was modified to deal with survival in the National Capitol Region and to address other issues of interest to the members.  During the years which followed, many officers were reassigned in and out of the Washington area so the group continued to grow. The need for a more structured organization was also seen, so a formal meeting was held on October 9, 1974, to get the group formalized. BG Roscoe Cartwright, along with Colonel Robert B. Burke, led an initiative to formally organize the growing network into what became temporarily known as the "No Name Club" until they agreed on an official name. Shortly thereafter, on Dec 1, 1974, the "No Name Club" was assembled to vote on a name when it received news that General Cartwright and his wife had died in a plane crash earlier that day.  The leader of the group, General Cartwright, who embodied the spirit of nurturing, commitment and mentorship was gone.
-                 
+          <div class="meeting-single-item">
+            <div class="down-content">
+              <a href="About Us.html"><h2>About Us</h2></a>
 
-                  </p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-             
+              <p class="description">
+                Since the mid-70s, The ROCKS, an international 501(c)3 nonprofit organization,
+                through its National Board, chapters and Interest Groups has been a source of strength
+                within the military community, providing mentorship and professional leadership
+                development to military officers...
+                <br><br>
+                Upon reaching Washington, several informal meetings followed...
+              </p>
+
             </div>
           </div>
+
         </div>
       </div>
     </div>
-   
   </section>
 
-  <!-- ***** About Us Section ***** -->
-
-  <!-- **** History Section **** -->
+  <!-- ⭐ HISTORY TIMELINE ⭐ -->
   <section class="meetings-page" id="Meetings">
-    
+
     <div class="timeline-container">
-  
-  <div class="timeline-item">
-    <div class="timeline-content">
-      <span class="timeline-date">Mid-1960s</span>
-      <h3>The "Blue Geese" Beginnings</h3>
-      <p>Army officers at Fort Leavenworth, Kansas, form an informal group to support one another during the Command and General Staff College (CGSC). They jokingly name themselves the "BLUE GEESE."</p>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-date">Mid-1960s</span>
+          <h3>The "Blue Geese" Beginnings</h3>
+          <p>Army officers at Fort Leavenworth...</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-date">Late 1960s - Early 1970s</span>
+          <h3>Transition to Washington</h3>
+          <p>Graduates are reassigned to the Pentagon...</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-date">October 9, 1974</span>
+          <h3>Formalization: The "No Name Club"</h3>
+          <p>BG Roscoe Cartwright and COL Robert B. Burke...</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-date">December 1, 1974</span>
+          <h3>A Tragic Turning Point</h3>
+          <p>During a meeting to vote on a permanent name...</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <span class="timeline-date">1975 - Present</span>
+          <h3>The ROCKS, Inc. Legacy</h3>
+          <p>The group officially names itself "The ROCKS, Inc."...</p>
+        </div>
+      </div>
+
     </div>
-  </div>
 
-  <div class="timeline-item">
-    <div class="timeline-content">
-      <span class="timeline-date">Late 1960s - Early 1970s</span>
-      <h3>Transition to Washington</h3>
-      <p>Graduates are reassigned to the Pentagon. The group shifts focus to "survival" in the National Capitol Region and begins expanding its network.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-content">
-      <span class="timeline-date">October 9, 1974</span>
-      <h3>Formalization: The "No Name Club"</h3>
-      <p>BG Roscoe Cartwright and COL Robert B. Burke lead the initiative to formalize the network, temporarily operating as the "No Name Club."</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-content">
-      <span class="timeline-date">December 1, 1974</span>
-      <h3>A Tragic Turning Point</h3>
-      <p>During a meeting to vote on a permanent name, members receive news of the tragic passing of BG Cartwright and his wife in a plane crash.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-content">
-      <span class="timeline-date">1975 - Present</span>
-      <h3>The ROCKS, Inc. Legacy</h3>
-      <p>The group officially names itself "The ROCKS, Inc." to honor BG Cartwright's mentorship. Today, it boasts over 1,200 members worldwide, including leaders like GEN Colin L. Powell.</p>
-    </div>
-  </div>
-
-</div>
-    
-  </section> 
-
-  <!-- ****History Section ****-->
-
-
-
+  </section>
 
 </body>
-
 </html>

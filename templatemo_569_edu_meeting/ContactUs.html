@@ -16,6 +16,70 @@
       color: #fff;
     }
 
+    /* SEARCH BOX */
+    .site-search-box {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      margin-top: 8px;
+      width: 340px;
+      background: rgba(15, 15, 15, 0.98);
+      border: 1px solid rgba(212, 160, 23, 0.5);
+      border-radius: 0 0 14px 14px;
+      padding: 14px;
+      z-index: 9999;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      animation: dropdownFade 0.25s ease;
+    }
+
+    .site-search-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(212, 160, 23, 0.4);
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .site-search-box input::placeholder {
+      color: #aaa;
+    }
+
+    .site-search-box input:focus {
+      border-color: #d4a017;
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+    }
+
+    #searchResults {
+      margin-top: 10px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    #searchResults a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    #searchResults a:hover {
+      background: rgba(212,160,23,0.15);
+      color: #d4a017;
+    }
+
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CONTACT PAGE STYLES */
     .contact-hero {
       background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.9)),
                   url("assets/images/meetings-bg.jpg");
@@ -144,27 +208,93 @@
 
 <body>
 
-  <header class="header-area header-sticky background-header">
+  <!-- ⭐ SUB HEADER ⭐ -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/rocksinc" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">
+                  <i class="fa fa-youtube"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ⭐ MAIN NAVIGATION ⭐ -->
+  <header class="header-area header-sticky">
     <div class="container">
       <div class="row">
         <div class="col-12">
+
           <nav class="main-nav">
-            <a href="index.html" class="logo">THE ROCKS, Inc.</a>
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+              THE ROCKS, Inc.
+            </a>
+
+            <!-- Menu -->
             <ul class="nav">
-              <li><a href="mentorship.html">Join Now</a></li>
+              <li><a href="JoinNow.html">Join Now</a></li>
               <li><a href="programs.html">Programs</a></li>
               <li><a href="Chapters.html">Find A Chapter</a></li>
-              <li><a href="">Donate</a></li>
-              <li><a href="About Us.html">About Us</a></li>
-              <li><a href="ContactUsPage.html" class="active">Contact</a></li>
+              <li><a href="donate.html">Donate</a></li>
+
+              <li class="has-sub">
+                <a href="javascript:void(0)">About Us</a>
+                <ul class="sub-menu">
+                  <li><a href="About Us.html">History</a></li>
+                  <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+              </li>
+
+              <li><a href="">Log in</a></li>
+              <li><a href="#" id="searchToggle">Search</a></li>
             </ul>
-            <a class="menu-trigger"><span>Menu</span></a>
+
+            <a class="menu-trigger">
+              <span>Menu</span>
+            </a>
+
           </nav>
+
         </div>
       </div>
     </div>
   </header>
 
+  <!-- ⭐ SEARCH BOX ⭐ -->
+  <div id="searchBox" class="site-search-box">
+    <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
+    <div id="searchResults"></div>
+  </div>
+
+  <!-- ⭐ CONTACT HERO ⭐ -->
   <section class="contact-hero">
     <div class="container">
       <h1>Contact Us</h1>
@@ -175,6 +305,7 @@
     </div>
   </section>
 
+  <!-- ⭐ CONTACT CONTENT ⭐ -->
   <section class="contact-section">
     <div class="container">
       <div class="row">
