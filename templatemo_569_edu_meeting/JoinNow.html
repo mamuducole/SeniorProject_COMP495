@@ -2,244 +2,738 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Under Construction | THE ROCKS, Inc.</title>
+  <title>Donate | THE ROCKS, Inc.</title>
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
 
-  <style>
+<style>
+html {
+  scroll-behavior: smooth;
+}
 
-    /* ---------------- NAV + SEARCH BOX ---------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
+    url("assets/images/scholarshipbackground.jpeg") center center / cover fixed no-repeat;
+  color: white;
+}
 
-    .site-search-box {
-      display: none;
-      position: absolute;
-      top: 100px;
-      right: 0;
-      margin-top: 8px;
-      width: 340px;
-      background: rgba(15, 15, 15, 0.98);
-      border: 1px solid rgba(212, 160, 23, 0.5);
-      border-radius: 0 0 14px 14px;
-      padding: 14px;
-      z-index: 9999;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      animation: dropdownFade 0.25s ease;
-    }
+.header-area {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
 
-    .site-search-box input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid rgba(212, 160, 23, 0.4);
-      border-radius: 8px;
-      background: #1a1a1a;
-      color: white;
-      font-size: 14px;
-      outline: none;
-    }
+/* SEARCH BOX */
 
-    .site-search-box input::placeholder {
-      color: #aaa;
-    }
+.site-search-box {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  margin-top: 8px;
+  width: 380px;
+  background: #050505;
+  border: 1px solid #d4a017;
+  border-radius: 0 0 14px 14px;
+  padding: 14px;
+  z-index: 10000;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+  animation: dropdownFade 0.25s ease;
+}
 
-    .site-search-box input:focus {
-      border-color: #d4a017;
-      box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
-    }
+.site-search-box input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(212,160,23,0.4);
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
 
-    #searchResults {
-      margin-top: 10px;
-      max-height: 220px;
-      overflow-y: auto;
-    }
+.site-search-box input::placeholder {
+  color: #aaa;
+}
 
-    #searchResults a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.2s ease;
-    }
+.site-search-box input:focus {
+  border-color: #d4a017;
+  box-shadow: 0 0 0 3px rgba(212,160,23,0.15);
+}
 
-    #searchResults a:hover {
-      background: rgba(212,160,23,0.15);
-      color: #d4a017;
-    }
+#searchResults {
+  margin-top: 10px;
+  max-height: 260px;
+  overflow-y: auto;
+}
 
-    @keyframes dropdownFade {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+#searchResults a {
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  background: #111 !important;
+  color: white !important;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.2s ease;
+}
 
-    /* ---------------- ORIGINAL PAGE STYLES ---------------- */
+#searchResults a:hover {
+  background: rgba(212,160,23,0.15) !important;
+}
 
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      text-align: center;
+.search-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
 
-      background:
-        linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.92)),
-        url("assets/images/scholarshipbackground.jpeg")
-        center center / cover no-repeat;
+.search-snippet {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 4px;
+  line-height: 1.5;
+}
 
-      font-family: Poppins, sans-serif;
-      color: white;
-    }
+.search-highlight {
+  color: #d4a017;
+  font-weight: 700;
+}
 
-    .construction-text {
-      margin-top: 180px; /* pushes content below navbar */
-    }
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
 
-    .construction-text h1 {
-      color: white;
-      font-size: 70px;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .construction-text h1 span {
-      color: #d4a017;
-    }
+/* DONATE PAGE */
 
-    .construction-text p {
-      color: #e7e7e7;
-      font-size: 20px;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: auto;
-    }
+.donate-page {
+  overflow-x: hidden;
+}
 
-    @media (max-width: 768px) {
-      .construction-text h1 {
-        font-size: 42px;
-      }
+.donate-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 180px 0 100px;
+}
 
-      .construction-text p {
-        font-size: 17px;
-        padding: 0 20px;
-      }
-    }
+.donate-hero-content {
+  max-width: 850px;
+}
 
-  </style>
+.donate-hero-content::before {
+  content: "";
+  display: block;
+  width: 540px;
+  max-width: 100%;
+  height: 2px;
+  background: #d4a017;
+  margin-bottom: 28px;
+}
 
+.donate-eyebrow {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f1f1f1;
+  margin-bottom: 28px;
+}
+
+.donate-hero h1 {
+  font-size: 84px;
+  line-height: 1.05;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 28px;
+}
+
+.donate-hero h1 span {
+  color: #d4a017;
+}
+
+.donate-hero p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ededed;
+  max-width: 720px;
+}
+
+.donate-hero-buttons {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.donate-primary-btn,
+.donate-secondary-btn,
+.fund-row a {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.donate-primary-btn,
+.fund-row a {
+  background: #d4a017;
+  color: #111;
+}
+
+.donate-primary-btn:hover,
+.fund-row a:hover {
+  background: white;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+.donate-secondary-btn {
+  border: 2px solid white;
+  color: white;
+}
+
+.donate-secondary-btn:hover {
+  background: white;
+  color: #111;
+}
+
+.donate-section {
+  padding: 100px 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(212,160,23,0.18);
+}
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.donate-text h2 {
+  font-size: 50px;
+  line-height: 1.15;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.donate-text h2 span {
+  color: #d4a017;
+}
+
+.donate-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #e8e8e8;
+  margin-bottom: 18px;
+}
+
+.donate-image {
+  min-height: 520px;
+  border-radius: 22px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.35);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+}
+
+.impact-img {
+  background-image: url("assets/images/JoinNowPage.PNG");
+}
+
+.legacy-img {
+  background-image: url("assets/images/LibraryMentorship.jpg");
+}
+
+.donation-funds-heading {
+  text-align: left;
+  max-width: 850px;
+  margin: 0 0 55px;
+}
+
+.section-kicker {
+  color: #d4a017 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.donation-funds-heading h2 {
+  font-size: 52px;
+  line-height: 1.12;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 18px;
+}
+
+.donation-funds-heading p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #e7e7e7;
+}
+
+.fund-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fund-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: center;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(212,160,23,0.18);
+  border-left: 4px solid rgba(212,160,23,0.8);
+  border-radius: 18px;
+  padding: 28px 32px;
+  transition: 0.25s ease;
+}
+
+.fund-row:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateX(6px);
+}
+
+.featured-row {
+  background: rgba(212,160,23,0.13);
+}
+
+.fund-number {
+  display: inline-block;
+  color: #d4a017;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.fund-row h3 {
+  font-size: 26px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.fund-row p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dedede;
+  margin: 0;
+  max-width: 760px;
+}
+
+.fund-row a {
+  white-space: nowrap;
+}
+
+.other-ways-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.give-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.give-list-item {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(212,160,23,0.25);
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 21px;
+  font-weight: 800;
+  color: white;
+}
+
+.give-list-item span {
+  font-size: 32px;
+  color: #d4a017;
+}
+
+.donate-final {
+  text-align: center;
+}
+
+.donate-final h2 {
+  font-size: 46px;
+  font-weight: 900;
+  color: #d4a017;
+  margin-bottom: 22px;
+}
+
+.donate-final p {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #f1f1f1;
+}
+
+@media (max-width: 992px) {
+  .donate-hero h1 {
+    font-size: 58px;
+  }
+
+  .donate-grid,
+  .other-ways-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .donate-hero {
+    padding: 150px 0 70px;
+  }
+
+  .donate-hero h1 {
+    font-size: 42px;
+  }
+
+  .donate-image {
+    min-height: 340px;
+  }
+
+  .fund-row {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-funds-heading h2 {
+    font-size: 36px;
+  }
+
+  .site-search-box {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ⭐ SUB HEADER ⭐ -->
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
+<div class="sub-header">
+  <div class="container">
+    <div class="row">
 
-        <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-            <p></p>
-          </div>
+      <div class="col-lg-8 col-sm-8">
+        <div class="left-content">
+          <p></p>
         </div>
+      </div>
 
-        <div class="col-lg-4 col-sm-4">
-          <div class="right-icons">
-            <ul>
-              <li>
-                <a href="https://www.facebook.com/rocksinc" target="_blank">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">
-                  <i class="fa fa-youtube"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+      <div class="col-lg-4 col-sm-4">
+        <div class="right-icons">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/rocksinc" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.youtube.com/@vicepresidentcommunication7991" target="_blank">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/company/the-rocks-inc/" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<header class="header-area header-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <nav class="main-nav">
+
+          <a href="index.html" class="logo">
+            THE ROCKS, Inc.
+          </a>
+
+          <ul class="nav">
+            <li><a href="JoinNow.html">Join Now</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="Chapters.html">Find A Chapter</a></li>
+            <li><a href="donate.html" class="active">Donate</a></li>
+
+            <li class="has-sub">
+              <a href="javascript:void(0)">About Us</a>
+              <ul class="sub-menu">
+                <li><a href="About Us.html">History</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+              </ul>
+            </li>
+
+            <li><a href="">Log in</a></li>
+            <li><a href="#" id="searchToggle">Search</a></li>
+          </ul>
+
+          <a class="menu-trigger">
+            <span>Menu</span>
+          </a>
+
+        </nav>
 
       </div>
     </div>
   </div>
+</header>
 
-  <!-- ⭐ MAIN NAVIGATION ⭐ -->
-  <header class="header-area header-sticky">
+<div id="searchBox" class="site-search-box">
+  <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
+  <div id="searchResults"></div>
+</div>
+
+<div class="donate-page">
+
+  <section class="donate-hero">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
+      <div class="donate-hero-content">
+      
 
-          <nav class="main-nav">
+        <h1>Your <span>Purpose</span> Starts Here.</h1>
 
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-              THE ROCKS, Inc.
-            </a>
+        <p>
+Join a community of leaders, mentors, and future changemakers. Whether you're looking for guidance, professional growth, or an opportunity to give back, you'll find your place here.
 
-            <!-- Menu -->
-            <ul class="nav">
-              <li><a href="JoinNow.html">Join Now</a></li>
-              <li><a href="programs.html">Programs</a></li>
-              <li><a href="Chapters.html">Find A Chapter</a></li>
-              <li><a href="donate.html">Donate</a></li>
+        </p>
 
-              <li class="has-sub">
-                <a href="javascript:void(0)">About Us</a>
-                <ul class="sub-menu">
-                  <li><a href="About Us.html">History</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </li>
-
-              <li><a href="">Log in</a></li>
-              <li><a href="#" id="searchToggle">Search</a></li>
-            </ul>
-
-            <a class="menu-trigger">
-              <span>Menu</span>
-            </a>
-
-          </nav>
-
+        <div class="donate-hero-buttons">
+          <a href="https://rockschamp.chronus.com/p/p1/login?mode=strict" class="donate-primary-btn">Access Application Portal</a>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- ⭐ SEARCH BOX ⭐ -->
-  <div id="searchBox" class="site-search-box">
-    <input type="text" id="siteSearchInput" placeholder="Search The ROCKS website...">
-    <div id="searchResults"></div>
-  </div>
+  <section class="donate-section">
+    <div class="container">
+      <div class="donate-grid">
+        <div class="donate-text">
+          <h2>Build Leadership. <span>Strengthen Communities.</span></h2>
+          <p>
+Joining THE ROCKS, Inc. gives you access to a nationwide network of mentors, leaders, and professionals committed to personal development, community service, and lifelong success.
 
-  <!-- ⭐ UNDER CONSTRUCTION CONTENT ⭐ -->
-  <div class="construction-text">
+          </p>
+          <p>
+            Whether you're looking to find a mentor, become a mentor, or expand your leadership journey, THE ROCKS, Inc. provides the resources, connections, and opportunities to help you thrive.
+          </p>
+        </div>
 
-    <h1>
-      Site <span>Under Construction</span>
-    </h1>
+        <div class="donate-image impact-img"></div>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      We are currently rebuilding this experience to better serve
-      future military and civilian leaders.
-      Please check back soon.
-    </p>
 
-  </div>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/custom.js"></script>
+ 
+
+
+  <section class="donate-section" id="other-ways">
+    <div class="container">
+      <div class="other-ways-grid">
+        <div class="donate-text">
+          <h2>Benefits of Joining</h2>
+          <p>
+            Joining THE ROCKS, Inc. provides access to mentorship, professional development, scholarships, networking, and outreach programs that help develop leaders and strengthen communities for generations to come.
+
+          </p>
+        </div>
+
+        <div class="give-list">
+          <div class="give-list-item">Free Membership Opportunities <span>+</span></div>
+          <div class="give-list-item">Lifelong Brotherhood & Sisterhood <span>+</span></div>
+          <div class="give-list-item">Community Service & Impact <span>+</span></div>
+          <div class="give-list-item">Scholarships & Resources <span>+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section donate-final">
+    <div class="container">
+      <h2>Your Impact Builds Legacy</h2>
+      <p>
+        The ROCKS, Inc. is a tax-exempt nonprofit organization under Section 501(c)(3).
+        Donations support mentorship, professional leadership development, scholarships,
+        networking, and outreach initiatives that strengthen military and civilian leaders.
+      </p>
+
+      <a href="https://rockschamp.chronus.com/p/p1/pages/5737?src=tab" class="donate-primary-btn">Become a Mentor</a>
+      <a href="https://rockschamp.chronus.com/p/p1/login?mode=strict" class="donate-primary-btn">Access Application Portal</a>
+      <a href="https://rockschamp.chronus.com/p/p1/pages/5738?src=tab" class="donate-primary-btn">Become a Mentee</a>
+
+    </div>
+  </section>
+
+</div>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/lightbox.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/video.js"></script>
+<script src="assets/js/slick-slider.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<script>
+const searchToggle = document.getElementById("searchToggle");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("siteSearchInput");
+const searchResults = document.getElementById("searchResults");
+
+const sitePages = [
+  {
+    title: "Home",
+    url: "index.html",
+    content: "Shaping Talent Through Mentorship. The ROCKS connects mentors, mentees, donors, officers, civilians, scholarships, testimonials, and leadership development."
+  },
+  {
+    title: "Join Now",
+    url: "JoinNow.html",
+    content: "Join THE ROCKS, Inc. Become a member and connect with mentors, leaders, chapters, programs, and professional development opportunities."
+  },
+  {
+    title: "Programs",
+    url: "programs.html",
+    content: "Programs include mentorship, scholarships, leadership development, professional development, networking opportunities, and career growth."
+  },
+  {
+    title: "Find A Chapter",
+    url: "Chapters.html",
+    content: "Find a chapter, connect with local groups, regional chapters, military communities, and leadership networks."
+  },
+  {
+    title: "Donate",
+    url: "donate.html",
+    content: "Donations support scholarships, mentorship programs, leadership development, future military leaders, operating support, leadership awards, and legacy projects."
+  },
+  {
+    title: "About Us",
+    url: "About Us.html",
+    content: "THE ROCKS, Inc. history began with the Blue Geese, the No Name Club, Roscoe Cartwright, mentorship, networking, and leadership development."
+  },
+  {
+    title: "Contact Us",
+    url: "ContactUs.html",
+    content: "Contact THE ROCKS for membership, leadership questions, mentorship assistance, scholarship information, phone number, address, and general questions."
+  }
+];
+
+searchToggle.addEventListener("click", function(e) {
+  e.preventDefault();
+
+  if (searchBox.style.display === "block") {
+    searchBox.style.display = "none";
+  } else {
+    searchBox.style.display = "block";
+    searchInput.focus();
+  }
+});
+
+searchInput.addEventListener("input", function() {
+  const query = searchInput.value.toLowerCase().trim();
+  searchResults.innerHTML = "";
+
+  if (query === "") return;
+
+  const matches = sitePages.filter(page =>
+    page.title.toLowerCase().includes(query) ||
+    page.content.toLowerCase().includes(query)
+  );
+
+  if (matches.length === 0) {
+    searchResults.innerHTML = `<p style="padding:10px; color:#aaa;">No results found.</p>`;
+    return;
+  }
+
+  matches.forEach(page => {
+    const resultLink = document.createElement("a");
+    resultLink.href = page.url;
+
+    let snippet = page.content;
+    const sentences = page.content.split(".");
+
+    for (let sentence of sentences) {
+      if (sentence.toLowerCase().includes(query)) {
+        snippet = sentence.trim();
+        break;
+      }
+    }
+
+    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp("(" + safeQuery + ")", "gi");
+
+    resultLink.innerHTML = `
+      <div class="search-title">${page.title}</div>
+      <div class="search-snippet">${snippet.replace(regex, '<span class="search-highlight">$1</span>')}</div>
+    `;
+
+    searchResults.appendChild(resultLink);
+  });
+});
+
+searchInput.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    const firstResult = searchResults.querySelector("a");
+
+    if (firstResult) {
+      window.location.href = firstResult.href;
+    }
+  }
+});
+
+document.addEventListener("click", function(e) {
+  if (!searchBox.contains(e.target) && !searchToggle.contains(e.target)) {
+    searchBox.style.display = "none";
+  }
+});
+</script>
 
 </body>
-
 </html>
