@@ -22,6 +22,19 @@ path.hover{
     fill: #f5a425 !important;
 }
 
+/* Dim non-matching states when searching */
+.state.dim {
+    opacity: 0.18;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+/* Matching state style */
+.state.match {
+    fill: #f5a425 !important;
+    opacity: 1 !important;
+}
+
 .state-label {
   font-family: "Arial", sans-serif;
   font-size: 10px;          /* Adjust based on your overall map size */
@@ -29,5 +42,55 @@ path.hover{
   fill: #333333;            /* Text color */
   text-anchor: middle;      /* Horizontally centers text on the X coordinate */
   dominant-baseline: central; /* Vertically centers text on the Y coordinate */
-  pointer-events: none;     /* Allows users to click 'through' the text onto the state */
+  pointer-events: auto;
+  cursor: pointer;
 }
+
+.label-box {
+  fill: rgba(255, 255, 255, 0.94);
+  stroke: #d4a017;
+  stroke-width: 1;
+}
+
+.label-line {
+  stroke: #333333;
+  stroke-width: 1.5;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Popup styles */
+.state-popup {
+  min-width: 200px;
+  background: rgba(15,15,15,0.95);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  display: block;
+}
+.state-popup-inner { position: relative; padding: 10px 12px; }
+.state-popup-close { position: absolute; right: 8px; top: 6px; background: transparent; border: none; color: #fff; font-size: 18px; cursor: pointer; }
+.state-popup-title { font-weight: 700; margin-bottom: 8px; }
+.state-popup-action,
+.state-popup-link {
+  display: inline-block;
+  background: #d4a017;
+  color: #111;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+.state-popup-action:hover,
+.state-popup-link:hover {
+  opacity: 0.95;
+}
+.state-popup-action:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+.state-popup-no { color: #ddd; font-size: 13px; }
